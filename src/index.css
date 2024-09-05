@@ -1,6 +1,21 @@
 @tailwind base;
 
 @layer base {
+
+  .custom-style{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+  }
+  .nav-container {
+    padding-top: 1.25rem; /* Equivalent to py-5 in Tailwind */
+    padding-bottom: 1.25rem;
+    padding-left: 2rem; 
+    padding-right: 2rem;
+  }
+  
+  
   .section1Style {
     max-width: 1440px;
     min-height: 723.89px;
@@ -99,7 +114,7 @@
     color: #666666;
     margin-bottom: 45px;
   }
-  .container1{
+  .container1 {
     display: flex;
     gap: 20px;
     align-items: center;
@@ -109,16 +124,629 @@
     max-width: 381px;
     min-height: 480px;
   }
-  span {
+  .browesSpan {
     font-family: "Poppins", sans-serif;
     font-size: 24px;
     font-weight: 600;
     line-height: 36px;
-    
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+  }
+  /* h4 {
+    text-align: center;
+    margin-bottom: 20px; 
+  } */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: repeat(2, auto); */
+    gap: 0px;
+    margin-left: 45px;
+    margin-top: 45px;
+  }
+  .theProducts {
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+  }
+  .percentage {
+    width: 50px; /* Set the desired width */
+    height: 50px; /* Set the same height as the width */
+    border-radius: 50%;
+    position: absolute;
+    top: 25px; /* Adjust as needed */
+    right: 85px; /* Adjust as needed */
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.5
+    ); /* Optional: Add a background for better visibility */
+    color: white; /* Change to match your design */
+    padding: 15px 8px; /* Optional: Add padding */
+    /* border-radius: 24px;  */
+    font-size: 0.9rem; /* Adjust font size as needed */
+  }
+  .productImages {
+    display: block; /* Ensure the image container takes up space */
+  }
+  /* .theProducts {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Optional: Center content inside each product */
+  /* padding: 10px; Adjust as needed */
+  /* border: 1px solid #ccc; Optional: Add border around each product */
+  /* border-radius: 8px; Optional: Add rounded corners */
+  /* }
+ */
+  .prodeuctImages {
+    max-width: 285px;
+    min-height: 301px;
+  }
+  .ourProducts {
+    max-width: 100%;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+    margin-top: 25px;
+  }
+  .productsName {
+    max-width: 123px;
+    min-height: 29px;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28.8px;
+    text-align: left;
+    color: #3a3a3a;
+  }
+  .productsDescription {
+    max-width: 100%;
+    min-height: 24px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    color: #898989;
+  }
+  .mainPrice {
+    max-width: 131px;
+    min-height: 30px;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    color: #3a3a3a;
+  }
+  .cancelled {
+    max-width: 102px;
+    min-height: 24px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #b0b0b0;
+    margin-left: 45px;
+    text-decoration: line-through;
+  }
+  .spans {
+    margin-bottom: 50px;
+  }
+  .showMoreButton {
+    max-width: 245px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    border: 2px solid #b88e2f;
+    padding: 10px 65px;
+    margin: auto 37%;
+  }
+
+  /* SECTION3 */
+  .section3Container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
+    grid-template-rows: 1fr; /* 1 row */
+    gap: 20px; /* Adjust the gap between the grid items as needed */
+    align-items: center; /* Align items vertically in the center */
+    padding: 20px; /* Add padding if necessary */
+    background: #FCF8F3;
+  }
+  .sec3Row1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .sec3Row1 p:nth-child(1) {
+    max-width: 422px;
+    min-height: 96px;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: left;
+    color: #3a3a3a;
+  }
+  .sec3Row1 p:nth-child(2) {
+    max-width: 368px;
+    min-height: 48px;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    color: #616161;
+    margin-top: 5px;
+    margin-bottom: 30px;
+  }
+  .sec3Row1 button {
+    max-width: 176px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #b88e2f;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  .sec3Row2 {
+    position: relative;
+  }
+
+  .sec3Row2 img {
+    width: 100%;
+    height: auto; /* Ensure the image scales properly */
+  }
+
+  .bgWhiteContent {
+    max-width: 217px;
+    min-height: 130px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* background-color: white; Assuming you want a white background */
+    padding: 10px; /* Add some padding for spacing */
+    z-index: 1; /* Ensure it stays on top of the image */
+    display: flex;
+  }
+  .containerRoom1 {
+    max-width: 217px;
+    min-height: 120px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    background: #ffffffb8;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .arrowRight {
+    width: 48px;
+    height: 48px;
+    background: #b88e2f;
+    position: absolute;
+    bottom: 0;
+    right: -40px;
+    top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .arrowRight img {
+    width: 18px;
+    height: 12px;
+  }
+  .room1 {
+    width: 100%;
+    min-height: 24px;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    background-color: #ffffff;
+  }
+  .room1 img {
+    max-width: 27px;
+    height: 1px;
+    margin-top: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .room1 p {
+    max-width: 83px;
+    min-height: 24px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    background: none;
+  }
+
+  .imgContainer {
+    position: relative;
+    display: inline-block; /* Adjusts the size based on the image */
+  }
+
+  .img42 {
+    display: block; /* Ensures that the image takes up the full width of the container */
+  }
+
+  .arrowrightpoint {
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    position: absolute;
+    bottom: 160px;
+    right: -20px;
+    background: #FFFFFF;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .arrowrightpoint img{
+    width: 7px;
+height: 14px;
+
+
+  }
+  .containerRoom1 p:nth-child(2) {
+    width: 168px;
+    height: 34px;
+    font-family: "Poppins", sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 33.6px;
+    text-align: left;
+    color: #3a3a3a;
+  }
+  .dotsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding-top: 25px;
+  }
+
+  /* SECTION FOUR */
+  .share {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .share p:nth-child(1) {
+    max-width: 222px;
+    min-height: 30px;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    color: #616161;
+  }
+  .share p:nth-child(2) {
+    max-width: 356px;
+    min-height: 48px;
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+    color: #3a3a3a;
+  }
+  .section4Container {
+    width: 95%;
+    display: grid;
+    grid-template-columns: 40% 20% 40%; /* Columns with specific sizes */
+    /* grid-template-rows: 1fr; 1 row */
+    gap: 10px; /* Optional: add some space between grid items */
+    margin-left: 15px;
+  }
+  .colA {
+    width: 35%;
+  }
+  .colADiv1 {
+    display: flex;
+    gap: 15px;
+  }
+  .colADiv1 img:nth-child(1) {
+    max-width: 180px;
+    height: 382px;
+  }
+  .colADiv1 img:nth-child(2) {
+    max-width: 300px;
+    height: 312px;
+    position: relative;
+    top: 65px;
+  }
+
+  .colADiv2 {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  .colADiv2 img:nth-child(1) {
+    max-width: 180px;
+    height: 382px;
+  }
+  .colADiv2 img:nth-child(2) {
+    max-width: 300px;
+    height: 312px;
+    position: relative;
+    bottom: 3px;
+  }
+
+  .colB {
+    width: 15%;
+
+    /* height: 721px; */
+  }
+  .colB img {
+    max-width: 255px;
+    position: relative;
+    top: 165px;
+  }
+
+  .colC {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+  }
+  .colCDiv1 {
+    display: flex;
+    gap: 15px;
+  }
+  .colCDiv1 img:nth-child(1) {
+    max-width: 180px;
+    height: 250px;
+    position: relative;
+    top: 65px;
+  }
+  .colCDiv1 img:nth-child(2) {
+    max-width: 260px;
+    height: 312px;
+  }
+  .colCDiv2 {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .colCDiv2 img:nth-child(1) {
+    max-width: 180px;
+    height: 382px;
+  }
+  .colCDiv2 img:nth-child(2) {
+    max-width: 280px;
+    height: 312px;
+    position: relative;
+    bottom: 3px;
+  }
+
+  /* FOOTER CONTAINER */
+  .footerInfo {
+    display: flex;
+    flex-direction: row;
+    gap: 160px;
+  }
+  .linksList {
+    display: flex;
+    flex-direction: row;
+    gap: 120px;
+  }
+  .linksList ul li {
+    margin-bottom: 30px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+  }
+  .listFormFlex {
+    display: flex;
+    gap: 65px;
+  }
+  fieldset p {
+    margin-bottom: 40px;
+  }
+  .fieldsetFlex {
+    display: flex;
+    gap: 15px;
+  }
+  .fieldsetFlex input {
+    border-bottom: 1px solid #000000;
+    padding-right: 30px;
+  }
+  .fieldsetFlex button {
+    border-bottom: 1px solid #000000;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    text-align: left;
+  }
+  .heads {
+    color: #9f9f9f;
+  }
+  .footer {
+    width: 100%;
+    padding-top: 50px;
+    padding-left: 25px;
+    border-top: 1px solid #0000002b;
+    margin-top: 25px;
+  }
+  .leftSide h4 {
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: left;
+    color: #000000;
+  }
+  .leftSide p {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #9f9f9f;
+    margin-top: 50px;
+  }
+  .lastContent {
+    border-top: 1px solid #d9d9d9;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin-right: 55px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  
+/* hand Burger starts here */
+.dropbtn {
+  max-width: 50px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 100%; /* Position dropdown directly below the hamburger */
+  left: 50%; /* Start positioning from the horizontal center */
+  transform: translateX(-50%); /* Center the dropdown relative to the hamburger */
+  padding: 10px 0;
+  border-radius: 5px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 7.3px 0px;
+  text-decoration: none;
+  height: 57px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 14.63px;
+  text-align: center;
+}
+.dropdown-content div a{
+  color: rgb(251, 243, 243);
+  padding: 7.3px 0px;
+  text-decoration: none;
+  height: 57px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family:  "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 14.63px;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  /* background-color: #3e8e41; */
+}
+/* ENDS */
+
+
+  /* Handburger stlying */
+  .menu{
+    display: none;
+}
+
+  @media (max-width: 1075px) {
+    .section4Container {
+      width: 80%;
+    }
+    .section3Container {
+      /* width: 100vw; */
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 4 columns with equal width */
+      grid-template-rows: 2fr; /* 1 row */
+      gap: 20px; /* Adjust the gap between the grid items as needed */
+      align-items: center; /* Align items vertically in the center */
+      padding: 20px; /* Add padding if necessary */
+      background: #FCF8F3;
+    }
+  }
+  @media (max-width: 990px) {
+  
+    .hidden {
+      display: none;
+    }
+    .block {
+      display: block;
+    }
+    nav ol{
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .custom-style {
+      display: none;
+    }
+     .menu {
+      display: flex;
+    }
+  }
+  @media (max-width: 768px) {
+    .products {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .products {
+      grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
   }
 
   /* h1 {

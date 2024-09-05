@@ -11,7 +11,7 @@ const Browes = () => {
                 <div key={each.id}>
                     <div>
                     <div className="imageStyle">{each.image}
-                        <span>{each.view}</span>
+                        <span className='browesSpan'>{each.view}</span>
                         </div>
                     {/* <div className="viewStyle">{each.view}</div> */}
                     </div>
