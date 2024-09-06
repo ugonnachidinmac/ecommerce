@@ -13,9 +13,9 @@ const Nav = () => {
     <nav className='nav-container'>
         <ol className='flex items-center justify-between'>
             <li>
-                <Link to="/Home"><img src={logo} alt="logo" /></Link> {/* Use 'Link' and 'to' */}
+                <Link to="/"><img src={logo} alt="logo" /></Link> {/* Use 'Link' and 'to' */}
             </li>
-            <li className='custom-style'>
+            <li className='custom-style linkFont'>
                 <Link to="/Home">Home</Link>
                 <Link to="/Shop">Shop</Link>
                 <Link to="/About">About</Link>

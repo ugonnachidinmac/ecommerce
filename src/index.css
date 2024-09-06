@@ -1,8 +1,7 @@
 @tailwind base;
 
 @layer base {
-
-  .custom-style{
+  .custom-style {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,11 +10,17 @@
   .nav-container {
     padding-top: 1.25rem; /* Equivalent to py-5 in Tailwind */
     padding-bottom: 1.25rem;
-    padding-left: 2rem; 
+    padding-left: 2rem;
     padding-right: 2rem;
   }
-  
-  
+  .linkFont{
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+  }
+
   .section1Style {
     max-width: 1440px;
     min-height: 723.89px;
@@ -266,7 +271,7 @@
     gap: 20px; /* Adjust the gap between the grid items as needed */
     align-items: center; /* Align items vertically in the center */
     padding: 20px; /* Add padding if necessary */
-    background: #FCF8F3;
+    background: #fcf8f3;
   }
   .sec3Row1 {
     display: flex;
@@ -399,17 +404,15 @@
     position: absolute;
     bottom: 160px;
     right: -20px;
-    background: #FFFFFF;
+    background: #ffffff;
     z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .arrowrightpoint img{
+  .arrowrightpoint img {
     width: 7px;
-height: 14px;
-
-
+    height: 14px;
   }
   .containerRoom1 p:nth-child(2) {
     width: 168px;
@@ -547,7 +550,7 @@ height: 14px;
   }
 
   /* FOOTER CONTAINER */
-  .footer{
+  .footer {
     width: 100%;
   }
   .footerInfo {
@@ -630,81 +633,81 @@ height: 14px;
     padding-bottom: 45px;
   }
 
-  
-/* hand Burger starts here */
-.dropbtn {
-  max-width: 50px;
-  border: none;
-}
+  /* hand Burger starts here */
+  .dropbtn {
+    max-width: 50px;
+    border: none;
+  }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 150px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  top: 100%; /* Position dropdown directly below the hamburger */
-  left: 50%; /* Start positioning from the horizontal center */
-  transform: translateX(-50%); /* Center the dropdown relative to the hamburger */
-  padding: 10px 0;
-  border-radius: 5px;
-}
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%; /* Position dropdown directly below the hamburger */
+    left: 50%; /* Start positioning from the horizontal center */
+    transform: translateX(
+      -50%
+    ); /* Center the dropdown relative to the hamburger */
+    padding: 10px 0;
+    border-radius: 5px;
+  }
 
-.dropdown-content a {
-  color: black;
-  padding: 7.3px 0px;
-  text-decoration: none;
-  height: 57px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 14.63px;
-  text-align: center;
-}
-.dropdown-content div a{
-  color: rgb(251, 243, 243);
-  padding: 7.3px 0px;
-  text-decoration: none;
-  height: 57px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family:  "Poppins", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 14.63px;
-  text-align: center;
-}
+  .dropdown-content a {
+    color: black;
+    padding: 7.3px 0px;
+    text-decoration: none;
+    height: 57px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14.63px;
+    text-align: center;
+  }
+  .dropdown-content div a {
+    color: rgb(251, 243, 243);
+    padding: 7.3px 0px;
+    text-decoration: none;
+    height: 57px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14.63px;
+    text-align: center;
+  }
 
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 
-.dropdown:hover .dropbtn {
-  /* background-color: #3e8e41; */
-}
-/* ENDS */
-
+  .dropdown:hover .dropbtn {
+    /* background-color: #3e8e41; */
+  }
+  /* ENDS */
 
   /* Handburger stlying */
-  .menu{
+  .menu {
     display: none;
-}
+  }
 
   @media (max-width: 1075px) {
     .section4Container {
@@ -718,25 +721,24 @@ height: 14px;
       gap: 20px; /* Adjust the gap between the grid items as needed */
       align-items: center; /* Align items vertically in the center */
       padding: 20px; /* Add padding if necessary */
-      background: #FCF8F3;
+      background: #fcf8f3;
     }
   }
   @media (max-width: 990px) {
-  
     .hidden {
       display: none;
     }
     .block {
       display: block;
     }
-    nav ol{
+    nav ol {
       display: flex;
       justify-content: space-evenly;
     }
     .custom-style {
       display: none;
     }
-     .menu {
+    .menu {
       display: flex;
     }
     .section4Container {
@@ -745,7 +747,7 @@ height: 14px;
       grid-template-columns: repeat(1, 1fr);
       justify-content: center; /* Centers the grid horizontally */
       align-items: center; /* Centers the grid vertically */
-      margin:  auto 145px; 
+      margin: auto 145px;
     }
     .footerInfo {
       display: block;
@@ -761,12 +763,12 @@ height: 14px;
       grid-template-columns: repeat(1, 1fr);
     }
     .section4Container {
-      width: 45%; 
+      width: 45%;
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       justify-content: center; /* Centers the grid horizontally */
       align-items: center; /* Centers the grid vertically */
-      margin:  auto 105px; 
+      margin: auto 105px;
     }
     .colADiv1 {
       display: block;
@@ -775,22 +777,22 @@ height: 14px;
       /* align-items: center;
       justify-content: center; */
     }
-    .colADiv2{
+    .colADiv2 {
       display: block;
       margin: auto 120px;
       margin-bottom: 85px;
     }
-    .colB{
+    .colB {
       display: block;
       margin: auto 120px;
       margin-bottom: 85px;
     }
-    .colCDiv1{
+    .colCDiv1 {
       display: block;
       margin: auto 120px;
       margin-bottom: 85px;
     }
-    .colCDiv2{
+    .colCDiv2 {
       display: block;
       margin: auto 120px;
       margin-bottom: 85px;
