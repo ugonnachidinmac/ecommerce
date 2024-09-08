@@ -196,11 +196,13 @@
     line-height: 24px;
     text-align: left;
     color: #B88E2F;
+    cursor: pointer;
   }
   .overlayIcons {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   }
   .iconItems {
     display: flex;
@@ -209,6 +211,7 @@
     gap: 15px;
     margin-left: 15px;
     margin-top: 20px;
+    cursor: pointer;
   }
   .percentage {
     width: 50px; /* Set the desired width */
