@@ -1,5 +1,5 @@
 import img31 from '../assets/img31.png';
-import img32 from '../assets/img32.png';
+import shopImg2 from '../assets/shopImg2.png';
 import img33 from '../assets/img33.png';
 import img34 from '../assets/img34.png';
 import img35 from '../assets/img35.png';
@@ -22,7 +22,7 @@ export const ProductsData = [
     {
         id:2,
         // percentage: '',
-        image: <img src={img34} alt="Leviosa" />,
+        image: <img src={shopImg2} alt="Leviosa" />,
         productName: 'Leviosa',
         description: 'Stylish cafe chair',
         price: 'Rp 2.500.000',

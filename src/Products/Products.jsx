@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { ProductsData } from "../Products/ProductsData";
+import shareIcon from '../assets/shareIcon.png'
+import love from '../assets/love.png'
+import arrowFrontandBack from '../assets/arrowFrontandBack.png'
 
 const Products = () => {
   const [products, setProducts] = useState(ProductsData);
@@ -9,7 +12,7 @@ const Products = () => {
       if (percentage === 'New') return '#2EC1AC'; // New items in blue color
       const percentValue = parseInt(percentage, 10);
       if (percentValue <= 0 && percentValue <= 100) return '#E97171'; // 0% - 100% in red color
-      return null; // Default color if no match
+      return; // Default color if no match
     }
 
     return (
@@ -27,9 +30,28 @@ const Products = () => {
                   <span className="mainPrice">{each.price}</span>
                   <span className="cancelledPrice">{each.previousPrice}</span>
                 </div>
+                <div className="hoverOverlay">
+                     <div className="network">Add to cart</div>
+                     <div className="overlayIcons">
+                      <div className="iconItems">
+                        <img src={shareIcon} alt="shareIcon" />
+                        <p>Share</p>
+                      </div>
+                      <div className="iconItems">
+                        <img src={arrowFrontandBack} alt="arrowFrontandBack" />
+                        <p>Compare</p>
+                      </div>
+                      <div className="iconItems">
+                        <img src={love} alt="love" />
+                        <p>Like</p>
+                      </div>
+                     </div>
+                </div>
               </div>
+              
             </div>
           ))}
+          
         </div>
         <button className="showMoreButton">Show More</button>
       </>

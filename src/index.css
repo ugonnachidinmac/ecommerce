@@ -13,7 +13,7 @@
     padding-left: 2rem;
     padding-right: 2rem;
   }
-  .linkFont{
+  .linkFont {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
@@ -150,11 +150,65 @@
     gap: 0px;
     margin-left: 45px;
     margin-top: 45px;
+    position: relative;
   }
   .theProducts {
     margin: 0px;
     padding: 0px;
     position: relative;
+    /* z-index: 2; */
+  }
+  .hoverOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 88%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none; /* Hide div A initially */
+    /* opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1; */
+  }
+
+  .theProducts:hover .hoverOverlay {
+    display: block;
+  }
+
+  .network {
+    max-width: 202px;
+    min-height: 48px;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+    margin-left: 45px;
+    margin-right: 45px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    color: #B88E2F;
+  }
+  .overlayIcons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .iconItems {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-left: 15px;
+    margin-top: 20px;
   }
   .percentage {
     width: 50px; /* Set the desired width */
