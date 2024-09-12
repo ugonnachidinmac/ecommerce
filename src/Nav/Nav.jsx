@@ -5,7 +5,9 @@ import navIcon2 from '../assets/navIcon2.png';
 import navIcon3 from '../assets/navIcon3.png';
 import navIcon4 from '../assets/navIcon4.png';
 import Hamburger from '../assets/Hamburger.png';
-import Home from '../Home/Home'
+import Home from '../Home/Home';
+import Shop from '../Components/Shop/Shop';
+import About from '../Components/About/About';
 import { Link } from 'react-router-dom'; // Correct the import
 
 const Nav = () => {
@@ -20,6 +22,7 @@ const Nav = () => {
                 <Link to="/Shop">Shop</Link>
                 <Link to="/About">About</Link>
                 <Link to="/Contact">Contact</Link>
+                <Link to="/Blog">Blog</Link>
             </li>
             <li className='custom-style'>
                 <Link to="/"><img src={navIcon1} alt="navIcon1" /></Link>

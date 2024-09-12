@@ -28,7 +28,7 @@ const Products = () => {
                 <p className="productsDescription">{each.description}</p>
                 <div className="spans">
                   <span className="mainPrice">{each.price}</span>
-                  <span className="cancelledPrice">{each.previousPrice}</span>
+                  <span className="cancelled">{each.previousPrice}</span>
                 </div>
                 <div className="hoverOverlay">
                      <div className="network">Add to cart</div>
@@ -54,6 +54,7 @@ const Products = () => {
           
         </div>
         <button className="showMoreButton">Show More</button>
+         {/* <div class="w-full h-[200px] grid grid-cols-1-mx-auto sm:grid-cols-2 lg:grid-cols-4 justify-between gap-10 pl-10 pr-10 bg-red-100 pt-[55px]"> */}
       </>
     );
   }

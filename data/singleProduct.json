@@ -1,0 +1,56 @@
+{
+    "images": {
+        "cloudName": "dqtyrjpeh",
+        "image1": {
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726020423/Outdoor_sofa_set_2_oureyo.png"
+        },
+        "image2": {
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726020423/Outdoor_sofa_set_2_1_mfqi1o.png"
+        },
+        "image3": {
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726020423/Stuart_sofa_1_ouonkq.png"
+        },
+        "image4": {
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726020423/Maya_sofa_three_seater_1_1_aqbnf6.png"
+        },
+        "image5": {
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726020424/Asgaard_sofa_3_huchwi.png"
+        },
+        "image6": {
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726020424/Group_107_f48q41.png"
+        },
+        "image7": {
+            "id": "1",
+            "discount": "",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972819/shopCol1_wh8sxu.png",
+            "productName": "Syltherine",
+        "discription": "Stylish cafe chair",
+        "price": "Rp 2.500.000",
+        "oldPrice": "Rp 3.500.000"
+        },
+        "image8": {
+            "discount": "",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726080556/shopImg1_yicoiy.png",
+            "productName": "Leviosa",
+        "discription": "Stylish cafe chair",
+        "price": "Rp 2.500.000",
+        "oldPrice": ""
+        },
+        "image9": {
+            "discount": "",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972819/shopCol3_hpumet.png",
+            "productName": "Lolito",
+        "discription": "Luxury big sofa",
+        "price": "Rp 7.000.000",
+        "oldPrice": "Rp 14.000.000"
+        },
+        "image10": {
+            "discount": "",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972820/shopCol4_lwnl2u.png",
+            "productName": "Respira",
+        "discription": "Outdoor bar table and stool",
+        "price": "Rp 500.000",
+        "oldPrice": ""
+        }
+    }
+}

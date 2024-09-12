@@ -1,0 +1,41 @@
+{
+    "images": {
+        "cloudName": "dqtyrjpeh",
+        "image1": {
+            "id": "1",
+            "discount": "",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972819/shopCol1_wh8sxu.png",
+            "productName": "Syltherine",
+        "discription": "Stylish cafe chair",
+        "price": "Rp 2.500.000",
+        "oldPrice": "Rp 3.500.000"
+        },
+        "image2": {
+            "id": "1",
+            "discount": "",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972820/shopCol2_gx0xw3.png",
+            "productName": "Leviosa",
+        "discription": "Stylish cafe chair",
+        "price": "Rp 2.500.000",
+        "oldPrice": ""
+        },
+        "image3": {
+            "id": "1",
+            "discount": "",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972819/shopCol3_hpumet.png",
+            "productName": "Lolito",
+        "discription": "Luxury big sofa",
+        "price": "Rp 7.000.000",
+        "oldPrice": "Rp 14.000.000"
+        },
+        "image4": {
+            "id": "1",
+            "discount": "",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972820/shopCol4_lwnl2u.png",
+            "productName": "Respira",
+        "discription": "Outdoor bar table and stool",
+        "price": "Rp 500.000",
+        "oldPrice": ""
+        }
+    }  
+}
