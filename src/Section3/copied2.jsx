@@ -8,7 +8,7 @@ import dot1 from "../assets/dot1.png";
 import dot2 from "../assets/dot2.png";
 import img43 from "../assets/img43.png";
 
-// import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const Section3 = () => {
   const images = [img41, img42, img43]; // Add your images here
@@ -37,6 +37,11 @@ const Section3 = () => {
     setCurrentSlide(index);
   };
 
+  const handleOtherDotClick = () => {
+    // Move to the next slide and update current dot
+    goToNextSlide();
+  };
+
   return (
     <div className="section3Container">
       <div className="sec3Row1">
@@ -52,22 +57,21 @@ const Section3 = () => {
       </div>
 
       <div className="sec3Row2">
-          <img src={img41} alt="img41" />
-          <div className="bgWhiteContent">
-            <div className="containerRoom1">
-              <div className="room1">
-                <p>01</p>
-                <img src={hori} alt="" />
-                <p>Bed Room</p>
-              </div>
-              <p>Inner Peace</p>
+        <img src={img41} alt="img41" />
+        <div className="bgWhiteContent">
+          <div className="containerRoom1">
+            <div className="room1">
+              <p>01</p>
+              <img src={hori} alt="" />
+              <p>Bed Room</p>
             </div>
-            <div className="arrowRight">
-              <img src={arrowRight} alt="" />
-            </div>
+            <p>Inner Peace</p>
+          </div>
+          <div className="arrowRight">
+            <img src={arrowRight} alt="" />
           </div>
         </div>
-
+      </div>
 
       {/* Image slider */}
       <div className="sec3MiddleTop">
@@ -77,11 +81,7 @@ const Section3 = () => {
 
           {/* Left arrow */}
           <div className="dotsContainer" onClick={goToPreviousSlide}>
-           
             <img className="firstDot" src={dot1} alt="" />
-            <img className="otherDots" src={dot2} alt="" />
-            <img className="otherDots" src={dot2} alt="" />
-            <img className="otherDots" src={dot2} alt="" /> 
           </div>
 
           {/* Right arrow */}
@@ -92,13 +92,21 @@ const Section3 = () => {
 
         {/* Dots for navigation */}
         <div className="dotsContainer">
-          {images.map((_, index) => (
-            <div
-              key={index}
-              className={`dot ${index === currentSlide ? "active" : ""}`}
-              onClick={() => handleDotClick(index)}
-            ></div>
-          ))}
+          {/* Dynamically change the appearance of the first dot based on the currentSlide */}
+          <div
+            className={`dot ${currentSlide === 0 ? "firstDot" : "otherDot"}`}
+            onClick={() => handleDotClick(0)}
+          ></div>
+
+          <div
+            className={`dot ${currentSlide === 1 ? "firstDot" : "otherDot"}`}
+            onClick={() => handleDotClick(1)}
+          ></div>
+
+          <div
+            className={`dot ${currentSlide === 2 ? "firstDot" : "otherDot"}`}
+            onClick={() => handleDotClick(2)}
+          ></div>
         </div>
       </div>
 
@@ -110,3 +118,4 @@ const Section3 = () => {
 };
 
 export default Section3;
+
