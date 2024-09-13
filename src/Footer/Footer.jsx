@@ -1,5 +1,5 @@
 import React from 'react'
-// import Form from '../Components/Form/Form'
+import {Signup} from '../Components/Form/Signup'
 
 const Footer = () => {
   return (
@@ -30,7 +30,7 @@ const Footer = () => {
             <li>Privacy Policies</li>
           </ul>
         </div>
-        {/* <Form /> */}
+        <Signup />
         {/* <form action="">
           <fieldset>
             <p className='heads'>Newsletter</p>

@@ -9,6 +9,7 @@ import About from './Components/About/About';
 import Contact from './Contact/Contact';
 import Blog from './Components/Blog/Blog';
 import SingleProduct from './Components/SingleProduct/SingleProduct';
+import Compare from './Components/Compare/Compare'
 import Error from './Error/Error';
 
 function App() {
@@ -25,9 +26,11 @@ function App() {
         <Route path='/About' element={<About />} />
         <Route path='/Contact' element={<Contact />} />
         <Route path='/Blog' element={<Blog />} />
+        <Route path='/Compare' element={<Compare />} />
         <Route path='*' element={<Error />} />
       </Routes>
       <Footer />
+      {/* http://localhost:5175/ */}
     </>
   );
 }

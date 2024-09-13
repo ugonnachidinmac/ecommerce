@@ -1,484 +1,176 @@
-import React, { useState } from "react";
-import { Image } from "cloudinary-react";
-import { images } from "../../../data/shopdata.json";
-import iconHigh from '../../assets/iconHigh.png';
-import iconWarranty from '../../assets/iconWarranty.png';
-import iconFree from '../../assets/iconFree.png';
-import iconSupport from '../../assets/iconSupport.png';
-import { useNavigate } from 'react-router-dom';
-
+import { useState, useEffect } from 'react';
+import ProductComponent from '../../Components/ProductComponent/ProductComponent'; // Assuming the component is in the same folder
 
 const Shop = () => {
-  let [shop, setShop] = useState(null);
-  // let redir = useNavigate();
+  const [products, setProducts] = useState([]);
 
-  // useEffect(() => {
-  //   axios.get("");
-  // }, []);
+  useEffect(() => {
+    // Your JSON file data
+    const jsonData = {
+      images: {
+        cloudName: "dqtyrjpeh",
+        image1: {
+          id: "1",
+          discount: "",
+          url: "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972819/shopCol1_wh8sxu.png",
+          productName: "Syltherine",
+          description: "Stylish cafe chair",
+          price: "Rp 2.500.000",
+          oldPrice: "Rp 3.500.000",
+        },
+        image2: {
+          id: "2",
+          discount: "",
+          url: "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972820/shopCol2_gx0xw3.png",
+          productName: "Leviosa",
+          description: "Stylish cafe chair",
+          price: "Rp 2.500.000",
+          oldPrice: "",
+        },
+        image3: {
+          id: "3",
+          discount: "",
+          url: "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972819/shopCol3_hpumet.png",
+          productName: "Lolito",
+          description: "Luxury big sofa",
+          price: "Rp 7.000.000",
+          oldPrice: "Rp 14.000.000",
+        },
+        image4: {
+          id: "4",
+          discount: "",
+          url: "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972820/shopCol4_lwnl2u.png",
+          productName: "Respira",
+          description: "Outdoor bar table and stool",
+          price: "Rp 500.000",
+          oldPrice: "",
+        },
+        image5: {
+          id: "5",
+          discount: "",
+          url: "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972819/shopCol1_wh8sxu.png",
+          productName: "Syltherine",
+          description: "Stylish cafe chair",
+          price: "Rp 2.500.000",
+          oldPrice: "Rp 3.500.000",
+        },
+        image6: {
+          id: "6",
+          discount: "",
+          url: "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972820/shopCol2_gx0xw3.png",
+          productName: "Leviosa",
+          description: "Stylish cafe chair",
+          price: "Rp 2.500.000",
+          oldPrice: "",
+        },
+        image7: {
+          id: "7",
+          discount: "",
+          url: "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972819/shopCol3_hpumet.png",
+          productName: "Lolito",
+          description: "Luxury big sofa",
+          price: "Rp 7.000.000",
+          oldPrice: "Rp 14.000.000",
+        },
+        image8: {
+          id: "8",
+          discount: "",
+          url: "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972820/shopCol4_lwnl2u.png",
+          productName: "Respira",
+          description: "Outdoor bar table and stool",
+          price: "Rp 500.000",
+          oldPrice: "",
+        },
+        image9: {
+          id: "9",
+          discount: "",
+          url: "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972819/shopCol1_wh8sxu.png",
+          productName: "Syltherine",
+          description: "Stylish cafe chair",
+          price: "Rp 2.500.000",
+          oldPrice: "Rp 3.500.000",
+        },
+        image10: {
+          id: "10",
+          discount: "",
+          url: "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972820/shopCol2_gx0xw3.png",
+          productName: "Leviosa",
+          description: "Stylish cafe chair",
+          price: "Rp 2.500.000",
+          oldPrice: "",
+        },
+        image11: {
+          id: "11",
+          discount: "",
+          url: "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972819/shopCol3_hpumet.png",
+          productName: "Lolito",
+          description: "Luxury big sofa",
+          price: "Rp 7.000.000",
+          oldPrice: "Rp 14.000.000",
+        },
+        image12: {
+          id: "12",
+          discount: "",
+          url: "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972820/shopCol4_lwnl2u.png",
+          productName: "Respira",
+          description: "Outdoor bar table and stool",
+          price: "Rp 500.000",
+          oldPrice: "",
+        },
+        image13: {
+          id: "13",
+          discount: "",
+          url: "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972819/shopCol1_wh8sxu.png",
+          productName: "Syltherine",
+          description: "Stylish cafe chair",
+          price: "Rp 2.500.000",
+          oldPrice: "Rp 3.500.000",
+        },
+        image14: {
+          id: "14",
+          discount: "",
+          url: "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972820/shopCol2_gx0xw3.png",
+          productName: "Leviosa",
+          description: "Stylish cafe chair",
+          price: "Rp 2.500.000",
+          oldPrice: "",
+        },
+        image15: {
+          id: "15",
+          discount: "",
+          url: "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972819/shopCol3_hpumet.png",
+          productName: "Lolito",
+          description: "Luxury big sofa",
+          price: "Rp 7.000.000",
+          oldPrice: "Rp 14.000.000",
+        },
+        image16: {
+          id: "16",
+          discount: "",
+          url: "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1725972820/shopCol4_lwnl2u.png",
+          productName: "Respira",
+          description: "Outdoor bar table and stool",
+          price: "Rp 500.000",
+          oldPrice: "",
+        },
+      },
+    };
+
+    // Convert the `images` object into an array of products
+    const productArray = Object.keys(jsonData.images)
+      .filter(key => key.startsWith("image")) // Only take keys starting with "image"
+      .map(key => ({
+        ...jsonData.images[key], // Get each product's details
+        cloudName: jsonData.images.cloudName, // Add cloudName to each product
+      }));
+
+    setProducts(productArray);
+  }, []);
+
   return (
-    <>
-      
-      <div class="w-full min-h-[2051px] mx-auto grid grid-cols-1-mx-auto sm:grid-cols-2 lg:grid-cols-4 gap-2 overflow-hidden pl-10 mt-10 ">
-        {/* onClick={() => redir{'/shop/' +each.images}} */}
-      <div  class="w-full max-w-[290px] min-h-[100px]">
-      <div>
-      {images.image1.discount}
-      </div>
-     <Image className="produtImg"
-        loading="lazy"
-        cloudName={images.cloudName}
-        publicId={images.image1.url}
-      />
-       <div className="productsName">
-      {images.image1.productName}
-      </div>
-      <div className="productsDescription">
-      {images.image1.discription}
-      </div>
-      <div className="spans">
-      <div className="mainPrice">
-      {images.image1.price}
-      </div>
-      <div className="cancelled">
-      {images.image1.oldPrice}
-      </div>
-      </div>
-     </div>
-
-     
-     <div class="w-full max-w-[285px] min-h-[446px]">
-
-      <div>
-      {images.image2.discount}
-      </div>
-     <Image className="produtImg"
-        loading="lazy"
-        cloudName={images.cloudName}
-        publicId={images.image2.url}
-      />
-       <div className="productsName">
-      {images.image2.productName}
-      </div>
-      <div className="productsDescription">
-      {images.image2.discription}
-      </div>
-      <div className="spans">
-      <div className="mainPrice">
-      {images.image2.price}
-      </div>
-      <div className="cancelled">
-      {images.image2.oldPrice}
-      </div>
-      </div>
-     </div>
-
-     <div class=" w-full max-w-[285px] min-h-[446px]">
-
-      <div>
-      {images.image3.discount}
-      </div>
-     <Image className="produtImg"
-        loading="lazy"
-        cloudName={images.cloudName}
-        publicId={images.image3.url}
-      />
-       <div className="productsName">
-      {images.image3.productName}
-      </div>
-      <div className="productsDescription">
-      {images.image3.discription}
-      </div>
-      <div className="spans">
-      <div className="mainPrice">
-      {images.image3.price}
-      </div>
-      <div className="cancelled">
-      {images.image3.oldPrice}
-      </div>
-      </div>
-     </div>
-
-     <div class=" w-full max-w-[285px] min-h-[446px]">
-
-      <div>
-      {images.image4.discount}
-      </div>
-     <Image className="produtImg"
-        loading="lazy"
-        cloudName={images.cloudName}
-        publicId={images.image4.url}
-      />
-       <div className="productsName">
-      {images.image4.productName}
-      </div>
-      <div className="productsDescription">
-      {images.image4.discription}
-      </div>
-      <div className="spans">
-      <div className="mainPrice">
-      {images.image4.price}
-      </div>
-      <div className="cancelled">
-      {images.image4.oldPrice}
-      </div>
-      </div>
-     </div>
-
-{/* second row */}
-
-<div class=" w-full max-w-[285px] min-h-[446px]">
-
-      <div>
-      {images.image1.discount}
-      </div>
-     <Image className="produtImg"
-        loading="lazy"
-        cloudName={images.cloudName}
-        publicId={images.image1.url}
-      />
-       <div className="productsName">
-      {images.image1.productName}
-      </div>
-      <div className="productsDescription">
-      {images.image1.discription}
-      </div>
-      <div>
-      {images.image1.price}
-      </div>
-      <div>
-      {images.image1.oldPrice}
-      </div>
-     </div>
-
-     
-     <div class=" w-full max-w-[285px] min-h-[446px]">
-
-      <div>
-      {images.image2.discount}
-      </div>
-     <Image className="produtImg"
-        loading="lazy"
-        cloudName={images.cloudName}
-        publicId={images.image2.url}
-      />
-       <div className="productsName">
-      {images.image2.productName}
-      </div>
-      <div className="productsDescription">
-      {images.image2.discription}
-      </div>
-      <div className="spans">
-      <div className="mainPrice">
-      {images.image2.price}
-      </div>
-      <div className="cancelled">
-      {images.image2.oldPrice}
-      </div>
-      </div>
-     </div>
-
-    <div class=" w-full max-w-[285px] min-h-[446px]">
-
-      <div>
-      {images.image3.discount}
-      </div>
-     <Image className="produtImg"
-        loading="lazy"
-        cloudName={images.cloudName}
-        publicId={images.image3.url}
-      />
-       <div className="productsName">
-      {images.image3.productName}
-      </div>
-      <div className="productsDescription">
-      {images.image3.discription}
-      </div>
-      <div className="spans">
-      <div className="mainPrice">
-      {images.image3.price}
-      </div>
-      <div className="cancelled">
-      {images.image3.oldPrice}
-      </div>
-      </div>
-     </div>
-
-    <div class=" w-full max-w-[285px] min-h-[446px]">
-
-      <div>
-      {images.image4.discount}
-      </div>
-     <Image className="produtImg"
-        loading="lazy"
-        cloudName={images.cloudName}
-        publicId={images.image4.url}
-      />
-       <div className="productsName">
-      {images.image4.productName}
-      </div>
-      <div className="productsDescription">
-      {images.image4.discription}
-      </div>
-      <div className="spans">
-      <div className="mainPrice">
-      {images.image4.price}
-      </div>
-      <div className="cancelled">
-      {images.image4.oldPrice}
-      </div>
-      </div>
-     </div>
-{/* third row */}
-<div class=" w-full max-w-[285px] min-h-[446px]">
-
-      <div>
-      {images.image1.discount}
-      </div>
-     <Image className="produtImg"
-        loading="lazy"
-        cloudName={images.cloudName}
-        publicId={images.image1.url}
-      />
-       <div className="productsName">
-      {images.image1.productName}
-      </div>
-      <div className="productsDescription">
-      {images.image1.discription}
-      </div>
-      <div>
-      {images.image1.price}
-      </div>
-      <div>
-      {images.image1.oldPrice}
-      </div>
-     </div>
-
-     
-    <div class=" w-full max-w-[285px] min-h-[446px]">
-
-      <div>
-      {images.image2.discount}
-      </div>
-     <Image className="produtImg"
-        loading="lazy"
-        cloudName={images.cloudName}
-        publicId={images.image2.url}
-      />
-       <div className="productsName">
-      {images.image2.productName}
-      </div>
-      <div className="productsDescription">
-      {images.image2.discription}
-      </div>
-      <div className="spans">
-      <div className="mainPrice">
-      {images.image2.price}
-      </div>
-      <div className="cancelled">
-      {images.image2.oldPrice}
-      </div>
-      </div>
-     </div>
-
-    <div class=" w-full max-w-[285px] min-h-[446px]">
-
-      <div>
-      {images.image3.discount}
-      </div>
-     <Image className="produtImg"
-        loading="lazy"
-        cloudName={images.cloudName}
-        publicId={images.image3.url}
-      />
-       <div className="productsName">
-      {images.image3.productName}
-      </div>
-      <div className="productsDescription">
-      {images.image3.discription}
-      </div>
-      <div className="spans">
-      <div className="mainPrice">
-      {images.image3.price}
-      </div>
-      <div className="cancelled">
-      {images.image3.oldPrice}
-      </div>
-      </div>
-     </div>
-
-    <div class=" w-full max-w-[285px] min-h-[446px]">
-
-      <div>
-      {images.image4.discount}
-      </div>
-     <Image className="produtImg"
-        loading="lazy"
-        cloudName={images.cloudName}
-        publicId={images.image4.url}
-      />
-       <div className="productsName">
-      {images.image4.productName}
-      </div>
-      <div className="productsDescription">
-      {images.image4.discription}
-      </div>
-      <div className="spans">
-      <div className="mainPrice">
-      {images.image4.price}
-      </div>
-      <div className="cancelled">
-      {images.image4.oldPrice}
-      </div>
-      </div>
-     </div>
-
-
-{/* fourth row */}
-<div class=" w-full max-w-[285px] min-h-[446px]">
-
-      <div>
-      {images.image1.discount}
-      </div>
-     <Image className="produtImg"
-        loading="lazy"
-        cloudName={images.cloudName}
-        publicId={images.image1.url}
-      />
-       <div className="productsName">
-      {images.image1.productName}
-      </div>
-      <div className="productsDescription">
-      {images.image1.discription}
-      </div>
-      <div>
-      {images.image1.price}
-      </div>
-      <div>
-      {images.image1.oldPrice}
-      </div>
-     </div>
-
-     
-    <div class=" w-full max-w-[285px] min-h-[446px]">
-
-      <div>
-      {images.image2.discount}
-      </div>
-     <Image className="produtImg"
-        loading="lazy"
-        cloudName={images.cloudName}
-        publicId={images.image2.url}
-      />
-       <div className="productsName">
-      {images.image2.productName}
-      </div>
-      <div className="productsDescription">
-      {images.image2.discription}
-      </div>
-      <div className="spans">
-      <div className="mainPrice">
-      {images.image2.price}
-      </div>
-      <div className="cancelled">
-      {images.image2.oldPrice}
-      </div>
-      </div>
-     </div>
-
-    <div class=" w-full max-w-[285px] min-h-[446px]">
-
-      <div>
-      {images.image3.discount}
-      </div>
-     <Image className="produtImg"
-        loading="lazy"
-        cloudName={images.cloudName}
-        publicId={images.image3.url}
-      />
-       <div className="productsName">
-      {images.image3.productName}
-      </div>
-      <div className="productsDescription">
-      {images.image3.discription}
-      </div>
-      <div className="spans">
-      <div className="mainPrice">
-      {images.image3.price}
-      </div>
-      <div className="cancelled">
-      {images.image3.oldPrice}
-      </div>
-      </div>
-     </div>
-
-    <div class=" w-full max-w-[285px] min-h-[446px]">
-
-      <div>
-      {images.image4.discount}
-      </div>
-     <Image className="produtImg"
-        loading="lazy"
-        cloudName={images.cloudName}
-        publicId={images.image4.url}
-      />
-       <div className="productsName">
-      {images.image4.productName}
-      </div>
-      <div className="productsDescription">
-      {images.image4.discription}
-      </div>
-      <div className="spans">
-      <div className="mainPrice">
-      {images.image4.price}
-      </div>
-      <div className="cancelled">
-      {images.image4.oldPrice}
-      </div>
-      </div>
-     </div>
-     </div>
-      {/* pagination */}
-      <div class="w-full flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap items-center justify-center gap-10 px-5 py-5 my-auto mb-[250px]" >
-      <span class='w-[40px] h-[40px] bg-red-500 rounded-xl flex items-center justify-center'>1</span>
-      <span class='w-[40px] h-[40px] bg-red-100 rounded-xl flex items-center justify-center'>2</span>
-      <span class='w-[40px] h-[40px] bg-red-100 rounded-xl flex items-center justify-center'>3</span>
-      <span class='w-[60px] h-[40px] bg-red-100 rounded-xl flex items-center justify-center'>Next</span>
-     </div>
-
-     {/* grid grid-cols-1-mx-auto sm:grid-cols-2 lg:grid-cols-4 */}
-
-     {/* SectionTwo */}
-     <div class="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap justify-between gap-10 px-10 py-20 bg-red-100">
-      <div class="flex gap-4">
-        <img class="max-w-[60px] h-[60px]" src={iconHigh} alt="" />
-        <div class="mt-1 max-w-[267px] h-[70px]">
-          <p>High Quality</p>
-          <p>crafted from top materials</p>
-        </div>
-      </div>
-      <div class="flex gap-4">
-        <img class="max-w-[60px] h-[60px]" src={iconWarranty} alt="" />
-        <div class="mt-1 max-w-[267px] h-[70px]">
-          <p>Warranty Protection</p>
-          <p>Over 2 years</p>
-        </div>
-      </div>
-      <div class="flex gap-4">
-        <img class="max-w-[60px] h-[60px]" src={iconFree} alt="" />
-        <div class="mt-1 max-w-[267px] h-[70px]">
-          <p>Free Shipping</p>
-          <p>Order over 150 $</p>
-        </div>
-      </div>
-      <div class="flex gap-4">
-        <img class="max-w-[60px] h-[60px]" src={iconSupport} alt="" />
-        <div class="mt-1 max-w-[267px] h-[70px]">
-          <p>24 / 7 Support</p>
-          <p>Dedicated support</p>
-        </div>
-      </div>
-     </div>
-    </>
+    <div>
+      <ProductComponent products={products} />
+    </div>
   );
 };
 
