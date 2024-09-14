@@ -1,0 +1,13 @@
+{
+    "images": {
+        "cloudName": "dqtyrjpeh",
+        "image1": {
+            "id": "1",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726196342/cartImage1_fqoumx.png"
+        },
+        "image2": {
+            "id": "2",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726196343/cartImage2_bm1tty.png"
+        }
+    }
+}

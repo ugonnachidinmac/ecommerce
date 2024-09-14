@@ -3,6 +3,8 @@ import { ProductsData } from "../Products/ProductsData";
 import shareIcon from '../assets/shareIcon.png'
 import love from '../assets/love.png'
 import arrowFrontandBack from '../assets/arrowFrontandBack.png'
+import { Image } from "cloudinary-react";
+import { images } from "../../data/homedata.json"
 
 import { useNavigate } from 'react-router-dom';
 

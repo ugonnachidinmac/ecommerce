@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Image } from 'cloudinary-react'; // Assuming you're using cloudinary-react for images
 import iconHigh from '../../assets/iconHigh.png';
 import iconWarranty from '../../assets/iconWarranty.png';
 import iconFree from '../../assets/iconFree.png';
 import iconSupport from '../../assets/iconSupport.png';
+import { useNavigate } from 'react-router-dom'
+import shopdata from '../../../data/shopdata.json';
 
 function ProductComponent({ products }) {
   // State for pagination
@@ -18,13 +20,16 @@ function ProductComponent({ products }) {
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  let [productComponent, setProductComponent] = useState(shopdata);
+  let redir = useNavigate();
+
   return (
     <>
 <div className="w-full min-h-[2051px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 overflow-hidden pl-10 mt-10 ">
 
 {/* Render current products */}
 {currentProducts.map((product, index) => (
-  <div key={index} className="w-full max-w-[290px] min-h-[100px]">
+  <div key={index} onClick={()=> redir('/ProductComponent/' +index)} className="w-full max-w-[290px] min-h-[100px]">
     <div>{product.discount}</div>
     <Image
       className="produtImg"
@@ -63,6 +68,10 @@ function ProductComponent({ products }) {
     Next
   </span>
 </div>
+
+
+{/* overlay */}
+
 
 
 {/* SectionTwo */}

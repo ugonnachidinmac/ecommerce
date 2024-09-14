@@ -6,6 +6,7 @@ import navIcon3 from '../assets/navIcon3.png';
 import navIcon4 from '../assets/navIcon4.png';
 import Hamburger from '../assets/Hamburger.png';
 import Home from '../Home/Home';
+import Cart from '../Components/Cart/Cart'
 import Shop from '../Components/Shop/Shop';
 import About from '../Components/About/About';
 import { Link } from 'react-router-dom'; // Correct the import
@@ -28,7 +29,7 @@ const Nav = () => {
                 <Link to="/"><img src={navIcon1} alt="navIcon1" /></Link>
                 <Link to="/"><img src={navIcon2} alt="navIcon2" /></Link>
                 <Link to="/"><img src={navIcon3} alt="navIcon3" /></Link>
-                <Link to="/"><img src={navIcon4} alt="navIcon4" /></Link>
+                <Link to="/Cart"><img src={navIcon4} alt="navIcon4" /></Link>
             </li>
 
             <li className="menu dropdown">
@@ -42,7 +43,7 @@ const Nav = () => {
                 <Link to="/"><img src={navIcon1} alt="navIcon1" /></Link>
                 <Link to="/"><img src={navIcon2} alt="navIcon2" /></Link>
                 <Link to="/"><img src={navIcon3} alt="navIcon3" /></Link>
-                <Link to="/"><img src={navIcon4} alt="navIcon4" /></Link> 
+                <Link to="/Cart"><img src={navIcon4} alt="navIcon4" /></Link> 
                 </div>
 
             </div>

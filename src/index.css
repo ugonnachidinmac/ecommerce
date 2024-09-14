@@ -342,6 +342,16 @@
   }
 
   /* SECTION3 */
+
+  /* .firstDot {
+    background-color: #000; 
+  }
+  
+  .otherDot {
+    background-color: #ccc; 
+  } */
+  /* className={`dot ${currentSlide === index ? "firstDot" : "otherDot"}`}
+ */
   .section3Container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */

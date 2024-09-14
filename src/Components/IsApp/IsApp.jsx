@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom'; // Import useLocation
+import { Routes, Route } from 'react-router-dom'; // Import Routes and Route
 import Nav from './Nav/Nav';
 import Footer from './Footer/Footer';
 import './App.css';
-import Home from './Home/Home'; 
+import Home from './Home/Home'; // Assuming you have these components
 import Shop from './Components/Shop/Shop';
 import About from './Components/About/About';
 import Contact from './Contact/Contact';
@@ -15,14 +15,10 @@ import Error from './Error/Error';
 
 function App() {
   const [count, setCount] = useState(0);
-  const location = useLocation(); // Get the current route
-
-  // Check if the current path is '/Cart'
-  const isCartPage = location.pathname === '/Cart';
 
   return (
     <>
-      {!isCartPage && <Nav />} {/* Conditionally render Nav */}
+      <Nav />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/Home' element={<Home />} />
@@ -32,13 +28,13 @@ function App() {
         <Route path='/Contact' element={<Contact />} />
         <Route path='/Blog' element={<Blog />} />
         <Route path='/Compare' element={<Compare />} />
-        <Route path='/Cart' element={<Cart />} /> {/* Cart page */}
+        <Route path='/Cart' element={<Cart />} />
         <Route path='*' element={<Error />} />
       </Routes>
-      {!isCartPage && <Footer />} {/* Conditionally render Footer */}
+      <Footer />
+      {/* http://localhost:5175/ */}
     </>
   );
 }
-// https://chatgpt.com/c/66e4d53c-4160-800b-ba94-fd716cbd67a7
 
 export default App;
