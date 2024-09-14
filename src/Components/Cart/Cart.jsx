@@ -7,8 +7,8 @@ import cartblockIcon from '../../assets/cartblockIcon.png'
 const Cart = () => {
   return (
    <>
-
-   <div className='w-[450px] min-h-[700px] flex items-end justify-start ml-[27px] position top'>
+  {/* Cart Container */}
+   <div className='cart-container w-[450px] min-h-[700px] flex items-end justify-start ml-[27px] position top'>
  
     <div className=' w-[417px] h-[746px] bg-white '>
         {/* section 1 */}
@@ -19,8 +19,7 @@ const Cart = () => {
  
 <hr className='w-[287px] border border-1-[#D9D9D9] mt-[50px]'/>
 {/* section2 */}
-{/* grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-32 */}
-        {/* <div className='w-[417px]  bg-white mt-[45px]'> */}
+
         <div className='flex  items-center justify-center gap-[78px] overflow-hidden mt-[45px]'>
   <Image className="w-[108px] h-[105px]" 
     loading="lazy"

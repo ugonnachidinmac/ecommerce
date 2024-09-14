@@ -13,6 +13,7 @@ import iconsTwitter from "../../assets/iconsTwitter.png";
 import { Link } from 'react-router-dom'; // Correct the import
 import{ useParams } from 'react-router-dom'
 
+// starty
 const SingleProduct = () => {
   let {shop} = useParams()
   let [singleProduct, setSingleProduct] = useState(null);
@@ -319,6 +320,7 @@ const SingleProduct = () => {
 <button class="border dorder-2 border-[#B88E2F] w-[245px] h-[48px] text-[#B88E2F]">Show More</button>
 </div>
      
+     {/* end */}
     </>
   );
 };
