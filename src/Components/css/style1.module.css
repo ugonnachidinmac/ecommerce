@@ -30,3 +30,17 @@
     letter-spacing: 3px;
     text-align: left;
   } */
+
+  @media (max-width: 900px) {
+    .section1Style {
+      padding-right: 1rem;
+      padding-top: 1rem;
+      justify-content: center;
+    }
+  
+    .nextDiv {
+      width: 90%;
+      height: auto; /* Allow height to adjust based on content */
+      margin: 1rem 0;
+    }
+  }

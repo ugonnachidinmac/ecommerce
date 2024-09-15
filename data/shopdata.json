@@ -144,6 +144,204 @@
       "description": "Minimalist flower pot",
       "price": "Rp 500.000",
       "previousPrice": ""
+    },
+        "image17": {
+            "id": "17",
+            "percentage": "-30%",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280231/img31_bnpyhc.png",
+            "productName": "Syltherine",
+            "description": "Stylish cafe chair",
+            "price": "Rp 2.500.000",
+            "previousPrice": "Rp 3.500.000"
+          },
+          "image18": {
+            "id": "18",
+           
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726080555/shopImg2_i7tpmf.png",
+            "productName": "Leviosa",
+            "description": "Stylish cafe chair",
+            "price": "Rp 2.500.000",
+            "previousPrice": "Rp 2.500.000"
+          },
+          "image19": {
+            "id": "19",
+            "percentage": "-50%",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726345690/img33_t0cpks.png",
+            "productName": "Lolito",
+            "description": "Luxury big sofa",
+            "price": "Rp 7.000.000",
+            "previousPrice": "Rp 14.000.000"
+          },
+          "image20": {
+            "id": "20",
+            "percentage": "New",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726345697/img34_bnxwxs.png",
+            "productName": "Respira",
+            "description": "Outdoor bar table and stool'",
+            "price": "Rp 500.000",
+            "previousPrice": ""
+          },
+        "image21": {
+            "id": "21",
+            "percentage": "-30%",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280231/img31_bnpyhc.png",
+            "productName": "Syltherine",
+            "description": "Stylish cafe chair",
+            "price": "Rp 2.500.000",
+            "previousPrice": "Rp 3.500.000"
+          },
+          "image22": {
+            "id": "22",
+           
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726080555/shopImg2_i7tpmf.png",
+            "productName": "Leviosa",
+            "description": "Stylish cafe chair",
+            "price": "Rp 2.500.000",
+            "previousPrice": "Rp 2.500.000"
+          },
+          "image23": {
+            "id": "23",
+            "percentage": "-50%",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726345690/img33_t0cpks.png",
+            "productName": "Lolito",
+            "description": "Luxury big sofa",
+            "price": "Rp 7.000.000",
+            "previousPrice": "Rp 14.000.000"
+          },
+          "image24": {
+            "id": "24",
+            "percentage": "New",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726345697/img34_bnxwxs.png",
+            "productName": "Respira",
+            "description": "Outdoor bar table and stool'",
+            "price": "Rp 500.000",
+            "previousPrice": ""
+          },
+          "image25": {
+      "id": "25",
+      "percentage": "-30%",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280231/img31_bnpyhc.png",
+      "productName": "Syltherine",
+      "description": "Stylish cafe chair",
+      "price": "Rp 2.500.000",
+      "previousPrice": "Rp 3.500.000"
+    },
+    "image26": {
+      "id": "26",
+     
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726080555/shopImg2_i7tpmf.png",
+      "productName": "Leviosa",
+      "description": "Stylish cafe chair",
+      "price": "Rp 2.500.000",
+      "previousPrice": "Rp 2.500.000"
+    },
+    "image27": {
+      "id": "27",
+      "percentage": "-50%",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726345690/img33_t0cpks.png",
+      "productName": "Lolito",
+      "description": "Luxury big sofa",
+      "price": "Rp 7.000.000",
+      "previousPrice": "Rp 14.000.000"
+    },
+    "image28": {
+      "id": "28",
+      "percentage": "New",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726345697/img34_bnxwxs.png",
+      "productName": "Respira",
+      "description": "Outdoor bar table and stool'",
+      "price": "Rp 500.000",
+      "previousPrice": ""
+    },
+    "image29": {
+      "id": "29",
+    
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280230/img35_yp7ukl.png ",
+      "productName": "Grifo",
+      "description": "Night lamp",
+      "price": "Rp 1.500.000",
+      "previousPrice": ""
+    },
+    "image30": {
+      "id": "30",
+      "percentage": "New",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280232/img36_xrxqec.png",
+      "productName": "Muggo",
+      "description": "Small mug",
+      "price": "Rp 150.000",
+      "previousPrice": ""
+    },
+    "image31": {
+      "id": "31",
+      "percentage": "-50%",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280232/img37_niqflb.png",
+      "productName": "Pingky",
+      "description": "Cute bed set",
+      "price": "Rp 7.000.000",
+      "previousPrice": "Rp 14.000.000"
+    },
+    "image32": {
+      "id": "32",
+      "percentage": "New",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280232/img38_ctnv5n.png",
+      "productName": "Potty",
+      "description": "Minimalist flower pot",
+      "price": "Rp 500.000",
+      "previousPrice": ""
+    },
+    "image33": {
+      "id": "33",
+      "percentage": "-50%",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726345690/img33_t0cpks.png",
+      "productName": "Lolito",
+      "description": "Luxury big sofa",
+      "price": "Rp 7.000.000",
+      "previousPrice": "Rp 14.000.000"
+    },
+    "image34": {
+      "id": "34",
+      "percentage": "New",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726345697/img34_bnxwxs.png",
+      "productName": "Respira",
+      "description": "Outdoor bar table and stool'",
+      "price": "Rp 500.000",
+      "previousPrice": ""
+    },
+    "image35": {
+      "id": "35",
+    
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280230/img35_yp7ukl.png ",
+      "productName": "Grifo",
+      "description": "Night lamp",
+      "price": "Rp 1.500.000",
+      "previousPrice": ""
+    },
+    "image36": {
+      "id": "36",
+      "percentage": "New",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280232/img36_xrxqec.png",
+      "productName": "Muggo",
+      "description": "Small mug",
+      "price": "Rp 150.000",
+      "previousPrice": ""
+    },
+    "image37": {
+      "id": "37",
+      "percentage": "-50%",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280232/img37_niqflb.png",
+      "productName": "Pingky",
+      "description": "Cute bed set",
+      "price": "Rp 7.000.000",
+      "previousPrice": "Rp 14.000.000"
+    },
+    "image38": {
+      "id": "38",
+      "percentage": "New",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280232/img38_ctnv5n.png",
+      "productName": "Potty",
+      "description": "Minimalist flower pot",
+      "price": "Rp 500.000",
+      "previousPrice": ""
     }
     }  
 }
