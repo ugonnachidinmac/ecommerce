@@ -42,15 +42,15 @@ const Products = () => {
 
   return (
     <>
-      <h4 className="ourProducts">Our Products</h4>
-      <div className="products">
+      <h4 className="ourProducts mb-[25px]">Our Products</h4>
+      <div className=" w-[90%] grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 justify-center place-items-center m-auto">
         {Object.keys(images)
           .filter((key) => key.startsWith("image"))
           .map((key) => {
             const product = images[key];
             return (
               <div key={product.id} className="theProducts">
-                <div className="flex-1 w-[285px] bg-[#F4F5F7]">
+                <div className="flex-1 w-[270px] bg-[#F4F5F7]">
                   <Image
                     cloudName={images.cloudName}
                     publicId={product.url}
@@ -75,7 +75,7 @@ const Products = () => {
                     </div>
                   </div>
                   {/* Hover overlay */}
-                  <div className="hoverOverlay">
+                  <div className="hoverOverlay w-fit">
                     <div className="network">Add to cart</div>
                     <div className="overlayIcons">
                       <div className="iconItems" onClick={handleShareClick}>
