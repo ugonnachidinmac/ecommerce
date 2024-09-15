@@ -22,7 +22,7 @@
           "image3": {
             "id": "3",
             "percentage": "-50%",
-            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726345690/img33_t0cpks.png",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280232/img38_ctnv5n.png",
             "productName": "Lolito",
             "description": "Luxury big sofa",
             "price": "Rp 7.000.000",
@@ -140,6 +140,24 @@
       "id": "16",
       "percentage": "New",
       "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280232/img38_ctnv5n.png",
+      "productName": "Potty",
+      "description": "Minimalist flower pot",
+      "price": "Rp 500.000",
+      "previousPrice": ""
+    },
+    "image17": {
+      "id": "17",
+      "percentage": "New",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280232/img36_xrxqec.png",
+      "productName": "Pingky",
+      "description": "Cute bed set",
+      "price": "Rp 7.000.000",
+      "previousPrice": "Rp 14.000.000"
+    },
+    "image18": {
+      "id": "18",
+      "percentage": "New",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280232/img37_niqflb.png",
       "productName": "Potty",
       "description": "Minimalist flower pot",
       "price": "Rp 500.000",

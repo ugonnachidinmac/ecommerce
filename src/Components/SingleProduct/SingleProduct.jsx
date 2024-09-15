@@ -41,28 +41,28 @@ const SingleProduct = () => {
             <div class="flex-1 bg-[#F9F1E7] h-[80px]">
               <Image
                 loading="lazy"
-                cloudName={images.cloudName}
+                cloudName={images.dqtyrjpeh}
                 publicId={images.image1.url}
               />
             </div>
             <div class="flex-1 bg-[#F9F1E7]">
               <Image
                 loading="lazy"
-                cloudName={images.cloudName}
+                cloudName={images.dqtyrjpeh}
                 publicId={images.image2.url}
               />
             </div>
             <div class="flex-1 bg-[#F9F1E7]">
               <Image
                 loading="lazy"
-                cloudName={images.cloudName}
+                cloudName={images.dqtyrjpeh}
                 publicId={images.image3.url}
               />
             </div>
             <div class="flex-1 bg-[#F9F1E7]">
               <Image
                 loading="lazy"
-                cloudName={images.cloudName}
+                cloudName={images.dqtyrjpeh}
                 publicId={images.image4.url}
               />
             </div>
@@ -72,7 +72,7 @@ const SingleProduct = () => {
             <div>
               <Image
                 loading="lazy"
-                cloudName={images.cloudName}
+                cloudName={images.dqtyrjpeh}
                 publicId={images.image5.url}
               />
             </div>

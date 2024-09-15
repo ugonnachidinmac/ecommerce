@@ -20,11 +20,25 @@
     line-height: 24px;
     text-align: left;
   }
-
+/* 
   .section1Style {
     max-width: 1440px;
     min-height: 723.89px;
     background-image: url("./assets/backgroundImage1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 25px;
+    padding-top: 45px;
+    font-family: "Poppins", sans-serif;
+  } */
+
+  .section1Style {
+    max-width: 1440px;
+    min-height: 723.89px;
+    background-image: url('./assets/defaultBackgroundImage.png'); /* Default background image */
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -56,7 +70,7 @@
     flex-direction: column;
     gap: 5px;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
   .nextDiv h2 {
     max-width: 559px;
@@ -162,7 +176,7 @@
     top: 0;
     left: 0;
     width: 92%;
-    height: 100%;
+    height: 90%;
     background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
     color: white;
     display: flex;
@@ -285,6 +299,7 @@
     line-height: 28.8px;
     text-align: left;
     color: #3a3a3a;
+    margin-top: 20px;
   }
   .productsDescription {
     max-width: 100%;

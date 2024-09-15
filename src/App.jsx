@@ -9,8 +9,9 @@ import About from './Components/About/About';
 import Contact from './Contact/Contact';
 import Blog from './Components/Blog/Blog';
 import SingleProduct from './Components/SingleProduct/SingleProduct';
-import Compare from './Components/Compare/Compare'
-import Cart from './Components/Cart/Cart'
+import Compare from './Components/Compare/Compare';
+import ShowMore from './Components/ShowMore/ShowMore';
+import Cart from './Components/Cart/Cart';
 import Error from './Error/Error';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path='/Contact' element={<Contact />} />
         <Route path='/Blog' element={<Blog />} />
         <Route path='/Compare' element={<Compare />} />
+        <Route path='/ShowMore' element={<ShowMore />} />
         <Route path='/Cart' element={<Cart />} /> {/* Cart page */}
         <Route path='*' element={<Error />} />
       </Routes>

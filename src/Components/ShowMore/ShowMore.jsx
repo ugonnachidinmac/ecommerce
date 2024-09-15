@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Image } from "cloudinary-react";
-import { images } from "../../../data/shopdata.json";
+import { images } from "../../../data/showmoredata.json";
 import shareIcon from "../../assets/shareIcon.png";
 import love from "../../assets/love.png";
 import arrowFrontandBack from "../../assets/arrowFrontandBack.png";
@@ -10,12 +10,12 @@ import iconFree from '../../assets/iconFree.png';
 import iconSupport from '../../assets/iconSupport.png';
 import { useNavigate } from "react-router-dom";
 
-const Shop = () => {
+const ShowMore = () => {
   const [product, setProduct] = useState(null);
   const [showToast, setShowToast] = useState(false);
   const [likedProducts, setLikedProducts] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 16; // Customize the number of products per page
+  const productsPerPage = 18; // Customize the number of products per page
   const navigate = useNavigate();
 
   const handleCompareClick = () => {
@@ -165,4 +165,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default ShowMore;

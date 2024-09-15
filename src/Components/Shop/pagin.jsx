@@ -42,15 +42,25 @@ const Shop = () => {
     return "transparent"; // No background if percentage is empty or undefined
   };
 
-  // Paginate products
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  // Calculate total products
+  const totalProducts = Object.keys(images).filter((key) => key.startsWith("image")).length;
 
-  // Get current products
+  // Total number of pages
+  const totalPages = Math.ceil(totalProducts / productsPerPage);
+
+  // Get current products for the current page
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = Object.keys(images)
     .filter((key) => key.startsWith("image"))
     .slice(indexOfFirstProduct, indexOfLastProduct);
+
+  // Paginate products
+  const paginate = (pageNumber) => {
+    if (pageNumber > 0 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
+  };
 
   return (
     <>
@@ -111,23 +121,31 @@ const Shop = () => {
 
       {/* Pagination Controls */}
       <div className="w-full flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap items-center justify-center gap-10 px-5 py-5 my-auto mb-[250px]">
-        {[1, 2, 3].map((number) => (
+        {/* Display the page numbers */}
+        {[...Array(totalPages)].map((_, index) => {
+          const pageNumber = index + 1;
+          return (
+            <span
+              key={pageNumber}
+              onClick={() => paginate(pageNumber)}
+              className={`w-[40px] h-[40px] ${
+                currentPage === pageNumber ? "bg-[#B88E2F] text-white" : "bg-red-100"
+              } rounded-xl flex items-center justify-center cursor-pointer`}
+            >
+              {pageNumber}
+            </span>
+          );
+        })}
+
+        {/* Only show the "Next" button if there are more pages */}
+        {currentPage < totalPages && (
           <span
-            key={number}
-            onClick={() => paginate(number)}
-            className={`w-[40px] h-[40px] ${
-              currentPage === number ? "bg-[#B88E2F] text-white" : "bg-red-100"
-            } rounded-xl flex items-center justify-center cursor-pointer`}
+            onClick={() => paginate(currentPage + 1)}
+            className="w-[60px] h-[40px] bg-red-100 rounded-xl flex items-center justify-center cursor-pointer"
           >
-            {number}
+            Next
           </span>
-        ))}
-        <span
-          onClick={() => paginate(currentPage + 1)}
-          className="w-[60px] h-[40px] bg-red-100 rounded-xl flex items-center justify-center cursor-pointer"
-        >
-          Next
-        </span>
+        )}
       </div>
 
       {/* SectionTwo */}

@@ -4,6 +4,7 @@ import iconHigh from '../../assets/iconHigh.png';
 import iconWarranty from '../../assets/iconWarranty.png';
 import iconFree from '../../assets/iconFree.png';
 import iconSupport from '../../assets/iconSupport.png';
+import Section2 from '../../Components/ProductComponent/Section2'
 import { useNavigate } from 'react-router-dom'
 import shopdata from '../../../data/shopdata.json';
 
@@ -75,7 +76,8 @@ function ProductComponent({ products }) {
 
 
 {/* SectionTwo */}
-<div className="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap justify-between gap-10 px-10 py-20 bg-red-100">
+<Section2 />
+{/* <div className="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap justify-between gap-10 px-10 py-20 bg-red-100">
 <div className="flex gap-4">
 <img className="max-w-[60px] h-[60px]" src={iconHigh} alt="" />
 <div className="mt-1 max-w-[267px] h-[70px]">
@@ -104,7 +106,7 @@ function ProductComponent({ products }) {
 <p>Dedicated support</p>
 </div>
 </div>
-</div>
+</div> */}
     </>
     
   );

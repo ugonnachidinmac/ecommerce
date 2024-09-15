@@ -1,0 +1,32 @@
+/* styles.css or your CSS module */
+.section1Style {
+    max-width: 1440px;
+    min-height: 723.89px;
+    background-image: url('./assets/defaultBackgroundImage.png'); /* Default background image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 25px;
+    padding-top: 45px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* .nextDiv {
+    max-width: 609px;
+    min-height: 447.36px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff3e3;
+    padding: 40px 0px 15px 30px;
+  }
+  .nextDiv p:nth-child(1) {
+    max-width: 140px;
+    min-height: 24.24px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 3px;
+    text-align: left;
+  } */

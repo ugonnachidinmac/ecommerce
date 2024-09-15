@@ -1,0 +1,78 @@
+{
+  "images": {
+    "cloudName": "dqtyrjpeh",
+    "image1": {
+      "id": "1",
+      "percentage": "-30%",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280231/img31_bnpyhc.png",
+      "productName": "Syltherine",
+      "description": "Stylish cafe chair",
+      "price": "Rp 2.500.000",
+      "previousPrice": "Rp 3.500.000"
+    },
+    "image2": {
+      "id": "2",
+     
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726080555/shopImg2_i7tpmf.png",
+      "productName": "Leviosa",
+      "description": "Stylish cafe chair",
+      "price": "Rp 2.500.000",
+      "previousPrice": "Rp 2.500.000"
+    },
+    "image3": {
+      "id": "3",
+      "percentage": "-50%",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726345690/img33_t0cpks.png",
+      "productName": "Lolito",
+      "description": "Luxury big sofa",
+      "price": "Rp 7.000.000",
+      "previousPrice": "Rp 14.000.000"
+    },
+    "image4": {
+      "id": "4",
+      "percentage": "New",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726345697/img34_bnxwxs.png",
+      "productName": "Respira",
+      "description": "Outdoor bar table and stool'",
+      "price": "Rp 500.000",
+      "previousPrice": ""
+    },
+    "image5": {
+      "id": "5",
+    
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280230/img35_yp7ukl.png ",
+      "productName": "Grifo",
+      "description": "Night lamp",
+      "price": "Rp 1.500.000",
+      "previousPrice": ""
+    },
+    "image6": {
+      "id": "6",
+      "percentage": "New",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280232/img36_xrxqec.png",
+      "productName": "Muggo",
+      "description": "Small mug",
+      "price": "Rp 150.000",
+      "previousPrice": ""
+    },
+    "image7": {
+      "id": "7",
+      "percentage": "-50%",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280232/img37_niqflb.png",
+      "productName": "Pingky",
+      "description": "Cute bed set",
+      "price": "Rp 7.000.000",
+      "previousPrice": "Rp 14.000.000"
+    },
+    "image8": {
+      "id": "8",
+      "percentage": "New",
+      "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280232/img38_ctnv5n.png",
+      "productName": "Potty",
+      "description": "Minimalist flower pot",
+      "price": "Rp 500.000",
+      "previousPrice": ""
+    }
+    
+  }
+}
