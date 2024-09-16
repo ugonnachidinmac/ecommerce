@@ -76,7 +76,7 @@ const Products = () => {
                   </div>
                   {/* Hover overlay */}
                   <div className="hoverOverlay w-[100%]">
-                    <div className="network">Add to cart</div>
+                    <button className="network">Add to cart</button>
                     <div className="overlayIcons">
                       <div className="iconItems" onClick={handleShareClick}>
                         <img src={shareIcon} alt="shareIcon" />

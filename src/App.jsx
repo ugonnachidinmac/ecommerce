@@ -14,6 +14,8 @@ const SingleProduct = lazy(()=> import ('./Components/SingleProduct/SingleProduc
 const Compare = lazy(()=> import ('./Components/Compare/Compare'))
 const ShowMore = lazy(()=> import ('./Components/ShowMore/ShowMore'))
 const Cart = lazy(()=> import ('./Components/Cart/Cart'))
+const CheckOut = lazy(()=> import ('./Components/CheckOut/CheckOut'))
+const Comparison = lazy(()=> import ('./Components/Comparison/Comparison'))
 const Error = lazy(()=> import ('./Error/Error'))
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
           <Route path='/Compare' element={<Compare />} />
           <Route path='/ShowMore' element={<ShowMore />} />
           <Route path='/Cart' element={<Cart />} />
+          <Route path='/CheckOut' element={<CheckOut />} />
+          <Route path='/Comparison' element={<Comparison />} />
           <Route path='*' element={<Error />} />
         </Routes>
       </Suspense>

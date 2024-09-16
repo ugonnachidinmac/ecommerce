@@ -211,6 +211,7 @@
     text-align: left;
     color: #b88e2f;
     cursor: pointer;
+    padding: 0 40px;
   }
   .overlayIcons {
     display: flex;

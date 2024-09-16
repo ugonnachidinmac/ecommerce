@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../assets/logo.png';
 import navIcon1 from '../assets/navIcon1.png';
 import navIcon2 from '../assets/navIcon2.png';
@@ -6,12 +6,14 @@ import navIcon3 from '../assets/navIcon3.png';
 import navIcon4 from '../assets/navIcon4.png';
 import Hamburger from '../assets/Hamburger.png';
 import Home from '../Home/Home';
-import Cart from '../Components/Cart/Cart'
+import Cart from '../Components/Cart/Cart';
 import Shop from '../Components/Shop/Shop';
 import About from '../Components/About/About';
+import CartSlider from '../Components/Cart/CartSlider'
 import { Link } from 'react-router-dom'; // Correct the import
 
 const Nav = () => {
+    let [show, setShow] = useState(false);
   return (
     <nav className='nav-container'>
         <ol className='flex items-center justify-between'>
@@ -29,7 +31,7 @@ const Nav = () => {
                 <Link to="/"><img src={navIcon1} alt="navIcon1" /></Link>
                 <Link to="/"><img src={navIcon2} alt="navIcon2" /></Link>
                 <Link to="/"><img src={navIcon3} alt="navIcon3" /></Link>
-                <Link to="/Cart"><img src={navIcon4} alt="navIcon4" /></Link>
+                <Link to="#" onClick={()=> setShow(prev=> !prev)}><img src={navIcon4} alt="navIcon4" /></Link>
             </li>
 
             <li className="menu dropdown">
@@ -50,6 +52,7 @@ const Nav = () => {
 
             </li>
         </ol>
+        <CartSlider show={show} setShow={setShow} />
     </nav>
   )
 }
