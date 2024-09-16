@@ -1,17 +1,20 @@
-import { useState } from 'react';
+import { lazy, useState } from 'react';
 import { Routes, Route } from 'react-router-dom'; // Import Routes and Route
-import Nav from './Nav/Nav';
-import Footer from './Footer/Footer';
 import './App.css';
-import Home from './Home/Home'; // Assuming you have these components
-import Shop from './Components/Shop/Shop';
-import About from './Components/About/About';
-import Contact from './Contact/Contact';
-import Blog from './Components/Blog/Blog';
-import SingleProduct from './Components/SingleProduct/SingleProduct';
-import Compare from './Components/Compare/Compare'
-import Cart from './Components/Cart/Cart'
-import Error from './Error/Error';
+import { Suspense } from 'react';
+
+const Nav = lazy(()=> import ('./Nav/Nav'))
+const Footer = lazy(()=> import ('./Footer/Footer'))
+const Home = lazy(()=> import ('./Home/Home'))
+const Shop = lazy(()=> import ('./Components/Shop/Shop'))
+const About = lazy(()=> import ('./Components/About/About'))
+const Contact = lazy(()=> import ('./Contact/Contact'))
+const Blog = lazy(()=> import ('./Components/Blog/Blog'))
+const SingleProduct = lazy(()=> import ('./Components/SingleProduct/SingleProduct'))
+const Compare = lazy(()=> import ('./Components/Compare/Compare'))
+const ShowMore = lazy(()=> import ('./Components/ShowMore/ShowMore'))
+const Cart = lazy(()=> import ('./Components/Cart/Cart'))
+const Error = lazy(()=> import ('./Error/Error'))
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,18 +22,21 @@ function App() {
   return (
     <>
       <Nav />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/Home' element={<Home />} />
-        <Route path='/Shop' element={<Shop />} />
-        <Route path='/ProductComponent/:ProductComponent' element={<SingleProduct />} />
-        <Route path='/About' element={<About />} />
-        <Route path='/Contact' element={<Contact />} />
-        <Route path='/Blog' element={<Blog />} />
-        <Route path='/Compare' element={<Compare />} />
-        <Route path='/Cart' element={<Cart />} />
-        <Route path='*' element={<Error />} />
-      </Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/Home' element={<Home />} />
+          <Route path='/Shop' element={<Shop />} />
+          <Route path='/ProductComponent/:ProductComponent' element={<SingleProduct />} />
+          <Route path='/About' element={<About />} />
+          <Route path='/Contact' element={<Contact />} />
+          <Route path='/Blog' element={<Blog />} />
+          <Route path='/Compare' element={<Compare />} />
+          <Route path='/ShowMore' element={<ShowMore />} />
+          <Route path='/Cart' element={<Cart />} />
+          <Route path='*' element={<Error />} />
+        </Routes>
+      </Suspense>
       <Footer />
       {/* http://localhost:5175/ */}
     </>

@@ -75,7 +75,7 @@ const Products = () => {
                     </div>
                   </div>
                   {/* Hover overlay */}
-                  <div className="hoverOverlay w-fit">
+                  <div className="hoverOverlay w-[100%]">
                     <div className="network">Add to cart</div>
                     <div className="overlayIcons">
                       <div className="iconItems" onClick={handleShareClick}>

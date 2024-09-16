@@ -18,7 +18,7 @@ const Section4 = () => {
     <p>Share your setup with</p>
     <p>#FuniroFurniture</p>
     </div>
-      <div className="section4Container">
+      <div className="section4Container ">
 
         <div className="colA">
             <div className="colADiv1">

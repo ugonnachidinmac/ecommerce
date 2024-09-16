@@ -54,7 +54,7 @@ const ShowMore = () => {
 
   return (
     <>
-      <div className="products">
+      <div className="products w-[90%] grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 justify-center place-items-center m-auto">
         {currentProducts.map((key) => {
           const product = images[key];
           return (
@@ -84,7 +84,7 @@ const ShowMore = () => {
                   </div>
                 </div>
                 {/* Hover overlay */}
-                <div className="hoverOverlay">
+                <div className="hoverOverlay w-[100%]">
                   <div className="network">Add to cart</div>
                   <div className="overlayIcons">
                     <div className="iconItems" onClick={handleShareClick}>
