@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       <Nav />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div className='flex items-center justify-center flew-row gap-3 min-h-[70vh] text-red-700 font-edu text-3xl'>Loading...</div>}>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/Home' element={<Home />} />
