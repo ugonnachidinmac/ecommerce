@@ -97,7 +97,7 @@ const Products = () => {
             );
           })}
       </div>
-      <button className="showMoreButton" onClick={handleShowmoreClick}>Show More</button>
+      <button className="showMoreButton grid grid-cols-1 m-auto" onClick={handleShowmoreClick}>Show More</button>
       {showToast && <div className="toast">URL Copied to Clipboard!</div>}
     </>
   );

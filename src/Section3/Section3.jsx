@@ -34,8 +34,8 @@ const Section3 = () => {
   };
 
   return (
-    <div className="section3Container w-[90%] grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 justify-center place-items-center m-auto">
-      <div className="sec3Row1">
+    <div className="section3Container w-[80%] grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 justify-center place-items-center m-auto">
+      <div className="sec3Row1 w-[190px]">
         <p>
           50+ Beautiful rooms <br />
           inspiration

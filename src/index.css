@@ -142,7 +142,7 @@
   }
   .imageStyle {
     max-width: 381px;
-    min-height: 480px;
+    /* min-height: 480px; */
   }
   .browesSpan {
     font-family: "Poppins", sans-serif;
@@ -407,7 +407,7 @@
     max-width: 422px;
     min-height: 96px;
     font-family: "Poppins", sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 700;
     line-height: 48px;
     text-align: left;
@@ -417,7 +417,7 @@
     max-width: 368px;
     min-height: 48px;
     font-family: "Poppins", sans-serif;
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 500;
     line-height: 24px;
     text-align: left;
@@ -433,7 +433,7 @@
     justify-content: center;
     background: #b88e2f;
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 24px;
     text-align: left;
@@ -489,7 +489,7 @@
     height: 12px;
   }
   .room1 {
-    width: 100%;
+    width: 50%;
     min-height: 24px;
     display: flex;
     /* align-items: center; */
@@ -560,7 +560,7 @@
 
   /* SECTION FOUR */
   .share {
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -586,15 +586,14 @@
     text-align: center;
     color: #3a3a3a;
   }
-  .section4Container {
+  /* .section4Container {
     width: 95%;
     display: grid;
-    grid-template-columns: 40% 20% 40%; /* Columns with specific sizes */
-    /* grid-template-rows: 1fr; 1 row */
-    gap: 10px; /* Optional: add some space between grid items */
+    grid-template-columns: 40% 20% 40%; 
+    gap: 10px; 
     margin-left: 15px;
-  }
-  .colA {
+  } */
+  /* .colA {
     width: 35%;
   }
   .colADiv1 {
@@ -629,10 +628,10 @@
   }
 
   .colB {
-    width: 15%;
+    width: 15%; */
 
     /* height: 721px; */
-  }
+  /* }
   .colB img {
     max-width: 255px;
     position: relative;
@@ -673,7 +672,7 @@
     height: 312px;
     position: relative;
     bottom: 3px;
-  }
+  } */
 
   /* FOOTER CONTAINER */
   .footer {

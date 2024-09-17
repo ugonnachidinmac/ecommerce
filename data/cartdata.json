@@ -2,8 +2,12 @@
     "images": {
         "cloudName": "dqtyrjpeh",
         "image1": {
-            "id": "",
-            "url": ""
+            "id": "1",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726531531/backgrounImage_for_car_ujboan.png"
+        },
+        "image2": {
+            "id": "2",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726531674/cartImage1_fzrzku.png"
         }
       
     }
