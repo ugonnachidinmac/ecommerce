@@ -1,0 +1,35 @@
+{
+    "images": {
+        "cloudName": "dqtyrjpeh",
+        "image1": {
+            "id": "1",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726542507/blogsideimg1_kk3ron.png",
+            "discription": "Going all-in with millennial design",
+            "calender": "03 Aug 2022"
+        },
+        "image2": {
+            "id": "2",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726542507/blogsideimg2_odiagq.png",
+            "discription": "Exploring new ways of decorating",
+            "calender": "03 Aug 2022"
+        },
+        "image3": {
+            "id": "3",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726542508/blogsideimg3_qzvdus.png",
+            "discription": "Handmade pieces that took time to make",
+            "calender": "03 Aug 2022"
+        },
+        "image4": {
+            "id": "4",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726542506/blogsideimg4_jshnbc.png",
+            "discription": "Modern home in Milan",
+            "calender": "03 Aug 2022"
+        },
+        "image5": {
+            "id": "5",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726542506/blogsideimg5_p8q9hs.png",
+            "discription2": "Colorful office redesign",
+            "calender2": "03 Aug 2022"
+        }
+    }
+}

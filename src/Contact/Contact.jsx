@@ -1,8 +1,11 @@
 import React from 'react'
+import SectionBckground from '../Components/SectionBckground/SectionBckground'
 
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <>
+    <h2>Contact page</h2>
+    </>
   )
 }
 
