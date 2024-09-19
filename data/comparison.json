@@ -1,0 +1,14 @@
+{
+    "images": {
+        "cloudName": "dqtyrjpeh",
+        "image1": {
+            "id": "1",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726542506/risonImage1_uoq9c2.png"
+        },
+        "image2": {
+            "id": "2",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726542507/risonImage2_lmk0sq.png"
+        }
+      
+    }
+}

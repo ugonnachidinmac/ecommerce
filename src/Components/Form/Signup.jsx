@@ -1,6 +1,8 @@
 import React from 'react';
 import { Formik, Form,  Field } from 'formik';
 import * as Yup from 'yup';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SignupSchema = Yup.object().shape({
 
@@ -18,10 +20,10 @@ export const Signup = () => (
       }}
       validationSchema={SignupSchema}
       onSubmit={values => {
-        // same shape as initial values
-        console.log(values);
+        toast.success("Subscribe successfully'");
+        console.log(JSON.stringify(values, null, 2));
 
-        alert('Subscribe successfully');
+        // alert('Subscribe successfully');
       }}
     >
       {({ errors, touched }) => (
