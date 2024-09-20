@@ -36,7 +36,9 @@ export const Signup = () => (
       <button type="submit" className='px-3 border border-1' style={{ borderBottomColor: '#000000' }}>Subcribe</button>
           </fieldset>
         </Form>
+       
       )}
     </Formik>
+    <ToastContainer />
   </div>
 );
