@@ -21,8 +21,8 @@ const CartSlider = ({show, setShow}) => {
 
             <div className='bottomContainer relative top-[430px]'>
             <div className='flex items-center  gap-[140px] pb-[25px] pr-[40px] mb-[20px]  border-none border-b-2 border-b-[#9F9F9F]  pl-[30px]'>
-                    <p className='font-[Poppins] text-[16px] font-bold'>Subtotal</p>
-                    <p className='font-[Poppins] text-[16px] font-bold text-[#b49651]'>Rs. 520,000.00</p>
+                    {/* <p className='font-[Poppins] text-[16px] font-bold'>Subtotal</p>
+                    <p className='font-[Poppins] text-[16px] font-bold text-[#b49651]'>Rs. 520,000.00</p> */}
                     </div>
                     <div className="buttonDiv grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-[25px] pl-[30px] pr-[60px]">
                     <button onClick={(e) =>{handleClose(e); redir('/Cart')}} className='outline outline-black-300 p-2 rounded-[20px] w-[87px] font-[Poppins] text-[12px] font-bold'>Cart</button>

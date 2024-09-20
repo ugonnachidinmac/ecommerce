@@ -31,7 +31,11 @@ const Nav = () => {
                 <Link to="/"><img src={navIcon1} alt="navIcon1" /></Link>
                 <Link to="/"><img src={navIcon2} alt="navIcon2" /></Link>
                 <Link to="/"><img src={navIcon3} alt="navIcon3" /></Link>
+                <div className='relative'>
                 <Link to="#" onClick={()=> setShow(prev=> !prev)}><img src={navIcon4} alt="navIcon4" /></Link>
+                <span className='absolute top-2/3 right-1/2 bg-red-500 text-white text-sm w-5 h-5 rounded-full flex justify-center'>0</span>
+                </div>
+              
             </li>
 
             <li className="menu dropdown">

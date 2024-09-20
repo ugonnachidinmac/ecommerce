@@ -15,7 +15,7 @@ const ShowMore = () => {
   const [showToast, setShowToast] = useState(false);
   const [likedProducts, setLikedProducts] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 18; // Customize the number of products per page
+  const productsPerPage = 8; // Customize the number of products per page
   const navigate = useNavigate();
 
   const handleCompareClick = () => {
@@ -54,6 +54,7 @@ const ShowMore = () => {
 
   return (
     <>
+    <h1 className="text-[#2EC1AC] font-Bold text-[24px] text-center mb-[25px]">More Products (Navigate to see more)</h1>
       <div className="products w-[90%] grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 justify-center place-items-center m-auto">
         {currentProducts.map((key) => {
           const product = images[key];

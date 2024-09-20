@@ -9,14 +9,11 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from"react-redux";
 import {addToCart } from "../Components/Cart/CartSlice";
 // import { useGetAllProductsQuery } from "../Components/"
-// import { useRecoilState } from 'recoil';
-// import { cartState } from '../Components/Atom/CartAtom';
 
 const Products = () => {
   const [products, setProducts] = useState(ProductsData);
   const [showToast, setShowToast] = useState(false);
   const [likedProducts, setLikedProducts] = useState({});
-  // const [cart, setCart] = useRecoilState(cartState);
   const navigate = useNavigate();
 
   const handleCompareClick = () => {
@@ -45,20 +42,8 @@ const Products = () => {
     if (percentage && percentage.includes("-")) return "#E97171"; // Discount (negative percentage) in red
     return "transparent"; // No background if percentage is empty or undefined
   };
-
-
-  
-  const handleAddToCart = () => {
-    const itemExists = cart.find(item => item.id === product.id);
-    if (itemExists) {
-      setCart(cart.map(item =>
-        item.id === product.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      ));
-    } else {
-      setCart([...cart, { ...product, quantity: 1 }]);
-    }
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product)); // Correct dispatch usage
   };
 
   return (
