@@ -14,7 +14,10 @@
             "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726020423/Maya_sofa_three_seater_1_1_aqbnf6.png"
         },
         "image5": {
-            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726020424/Asgaard_sofa_3_huchwi.png"
+            "id": "5",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726020424/Asgaard_sofa_3_huchwi.png",
+            "productName": " Asgaard sofa",
+            "price": "250,000.000"
         },
         "image6": {
             "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726020424/Group_107_f48q41.png"

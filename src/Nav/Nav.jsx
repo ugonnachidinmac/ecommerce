@@ -11,11 +11,14 @@ import Shop from '../Components/Shop/Shop';
 import About from '../Components/About/About';
 import CartSlider from '../Components/Cart/CartSlider'
 import { Link } from 'react-router-dom'; // Correct the import
+import { useRecoilValue } from 'recoil';
+import { cartData } from '../Components/Atom/Cart'
 
 const Nav = () => {
     let [show, setShow] = useState(false);
+    let cart = useRecoilValue(cartData);
   return (
-    <nav className='nav-container'>
+    <nav className='nav-container w-full'>
         <ol className='flex items-center justify-between'>
             <li>
                 <Link to="/"><img src={logo} alt="logo" /></Link> {/* Use 'Link' and 'to' */}
@@ -33,7 +36,7 @@ const Nav = () => {
                 <Link to="/"><img src={navIcon3} alt="navIcon3" /></Link>
                 <div className='relative'>
                 <Link to="#" onClick={()=> setShow(prev=> !prev)}><img src={navIcon4} alt="navIcon4" /></Link>
-                <span className='absolute top-2/3 right-1/2 bg-red-500 text-white text-sm w-5 h-5 rounded-full flex justify-center'>0</span>
+                <span className='absolute top-1/3 right-1/2 bg-red-500 text-white text-sm w-5 h-5 rounded-full flex justify-center'>{cart.length}</span>
                 </div>
               
             </li>
@@ -60,6 +63,6 @@ const Nav = () => {
     </nav>
   )
 }
-<Home />
+{/* <Home /> */}
 
 export default Nav;

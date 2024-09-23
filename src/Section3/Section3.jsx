@@ -47,10 +47,10 @@ const Section3 = () => {
         <button>Explore More</button>
       </div>
 
-      <div className="sec3Row2">
+      <div className="sec3Row2 w-full">
         <img src={img41} alt="img41" />
-        <div className="bgWhiteContent">
-          <div className="containerRoom1">
+        <div className="bgWhiteContent m-full">
+          <div className="containerRoom1 w-full">
             <div className="room1">
               <p>01</p>
               <img src={hori} alt="" />
@@ -68,7 +68,7 @@ const Section3 = () => {
       <div className="sec3MiddleTop">
         <div className="imgContainer">
           {/* Display current image */}
-          <img className="imgSlide" src={images[currentSlide]} alt={`Slide ${currentSlide}`} />
+          <img className="imgSlide w-full" src={images[currentSlide]} alt={`Slide ${currentSlide}`} />
 
           {/* Left arrow */}
           <div className="arrowrightpoint" onClick={goToPreviousSlide}>

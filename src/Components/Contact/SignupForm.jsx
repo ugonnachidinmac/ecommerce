@@ -23,8 +23,9 @@ const SignupForm = () => {
       message: '',
     },
     validationSchema,
-    onSubmit: values => {
+    onSubmit: (values, { resetForm }) => {
       toast.success("Form submitted successfully!");
+      resetForm(); // Reset the form after submission
       console.log(JSON.stringify(values, null, 2));
     },
   });
@@ -67,7 +68,7 @@ const SignupForm = () => {
         </div>
 
         <div>
-          <label htmlFor="subject" className="block mb-1"></label>
+          <label htmlFor="subject" className="block mb-1">Subject</label>
           <input
             id="subject"
             name="subject"
@@ -103,6 +104,6 @@ const SignupForm = () => {
       <ToastContainer />
     </div>
   );
-}
+};
 
 export default SignupForm;

@@ -38,9 +38,12 @@ const BillingForm = () => {
       addInformation: "",
     },
     validationSchema,
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
       toast.success("Details submitted successfully!");
       console.log(JSON.stringify(values, null, 2));
+
+      // Reset the form after submission
+      resetForm();
     },
   });
 

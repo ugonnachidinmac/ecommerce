@@ -12,12 +12,30 @@ import iconSLinkin from "../../assets/iconSLinkin.png";
 import iconsTwitter from "../../assets/iconsTwitter.png";
 import { Link } from 'react-router-dom'; // Correct the import
 import{ useParams } from 'react-router-dom'
-
+import { useLocation } from "react-router-dom";
+ 
 
 const Compare = () => {
 
       let {shop} = useParams()
       let [singleProduct, setSingleProduct] = useState(null);
+      const location = useLocation();
+      const { product } = location.state || {}; 
+      const [value, setValue] = useState(1); // Initial value is 1
+
+
+      const handleIncrease = () => {
+        setValue(prevValue => prevValue + 1);
+      };
+    
+      // Function to decrease value (prevent going below 1)
+      const handleDecrease = () => {
+        if (value > 1) {
+          setValue(prevValue => prevValue - 1);
+        }
+      };
+    
+
       return (
         <>
           {/*  grid-cols-1 sm:grid-cols-1 lg:gridgrid-cols-3 gap-10 */}
@@ -31,9 +49,9 @@ const Compare = () => {
               <img class="w-[20px] h-[20px] mt-1" src={arrowRightBlack} alt="" />
             </div>
             {/* border: 2px solid #9F9F9F */}
-            <div class="border-l border-l-[#9F9F9F] pl-4 font-Poppins text-[16px] font-semibold">
-              Asgaard sofa
-            </div>
+          <div className="border-l border-l-[#9F9F9F] pl-4 font-Poppins text-[16px] font-semibold">
+  {images.image5.productName}
+</div>
           </div>
     
           <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-2 overflow-hidden pl-10 mt-10">
@@ -70,6 +88,7 @@ const Compare = () => {
               </div>
     
               <div class="w-[300px] h-[480px] flex-1 bg-[#F9F1E7] mr-20">
+                {/* image changes from when user click on a particular product */}
                 <div>
                   <Image
                     loading="lazy"
@@ -80,11 +99,13 @@ const Compare = () => {
               </div>
             </div>
             <div class="w-[606.01px] h-[750px]  ml-5">
+                      {/* productName changes from when user click on a particular product */}
               <p class="size-[52px] font-bold font-poppins w-[282px] h-[62px] pt-8">
-                Asgaard sofa
+              {images.image5.productName}
               </p>
+                      {/* price changes from when user click on a particular product */}
               <p class="size-[24px] font-poppins font-semibold text-[#9F9F9F] w-[173px]">
-                Rs. 250,000.00
+                Rs. {images.image5.price}
               </p>
     
               <div class="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap gap-5 mt-5">
@@ -130,11 +151,13 @@ const Compare = () => {
     
     
               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-[606px]">
-                <div class="w-[123px] h-[64px] flex items-center justify-between p-2 rounded-[5px] border border-[#9F9F9F] text-[14px] font-poppins font-semibold">
-                  <span>-</span>
-                  <span>1</span>
-                  <span>+</span>
-                </div>
+
+<div className="w-[123px] h-[64px] flex items-center justify-between p-2 rounded-[5px] border border-[#9F9F9F] text-[14px] font-poppins font-semibold">
+        <span onClick={handleDecrease} style={{ cursor: 'pointer' }}>-</span>
+        <span>{value}</span>
+        <span onClick={handleIncrease} style={{ cursor: 'pointer' }}>+</span>
+      </div>
+
     
                 <div class="w-[123px] h-[64px] flex items-center justify-center p-2 rounded-[5px] border border-[#9F9F9F] text-[14px] font-poppins font-semibold">Add To Cart</div>
                 <div class="w-[123px] h-[64px] flex items-center justify-center gap-3 p-2 rounded-[5px] border border-[#9F9F9F] text-[14px] font-poppins font-semibold">

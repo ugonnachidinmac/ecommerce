@@ -19,8 +19,9 @@ export const Signup = () => (
         email: '',
       }}
       validationSchema={SignupSchema}
-      onSubmit={values => {
+      onSubmit={(values, { resetForm }) => {
         toast.success("Subscribe successfully'");
+        resetForm();
         console.log(JSON.stringify(values, null, 2));
 
         // alert('Subscribe successfully');

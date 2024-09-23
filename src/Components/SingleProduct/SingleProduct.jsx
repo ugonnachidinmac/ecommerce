@@ -17,6 +17,21 @@ import{ useParams } from 'react-router-dom'
 const SingleProduct = () => {
   let {shop} = useParams()
   let [singleProduct, setSingleProduct] = useState(null);
+  const [value, setValue] = useState(1); // Initial value is 1
+
+   // Function to increase value
+   const handleIncrease = () => {
+    setValue(prevValue => prevValue + 1);
+  };
+
+  // Function to decrease value (prevent going below 1)
+  const handleDecrease = () => {
+    if (value > 1) {
+      setValue(prevValue => prevValue - 1);
+    }
+  };
+
+
   return (
     <>
       {/*  grid-cols-1 sm:grid-cols-1 lg:gridgrid-cols-3 gap-10 */}
@@ -129,11 +144,18 @@ const SingleProduct = () => {
 
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-[606px]">
-            <div class="w-[123px] h-[64px] flex items-center justify-between p-2 rounded-[5px] border border-[#9F9F9F] text-[14px] font-poppins font-semibold">
-              <span>-</span>
+            {/* <div class="w-[123px] h-[64px] flex items-center justify-between p-2 rounded-[5px] border border-[#9F9F9F] text-[14px] font-poppins font-semibold">
+              <span onClick={handleDecrease} style={{ cursor: 'pointer' }}>-</span>
               <span>1</span>
-              <span>+</span>
-            </div>
+              <span onClick={handleIncrease} style={{ cursor: 'pointer' }} >+</span>
+            </div> */}
+
+<div className="w-[123px] h-[64px] flex items-center justify-between p-2 rounded-[5px] border border-[#9F9F9F] text-[14px] font-poppins font-semibold">
+        <span onClick={handleDecrease} style={{ cursor: 'pointer' }}>-</span>
+        <span>{value}</span>
+        <span onClick={handleIncrease} style={{ cursor: 'pointer' }}>+</span>
+      </div>
+
 
             <div class="w-[123px] h-[64px] flex items-center justify-center p-2 rounded-[5px] border border-[#9F9F9F] text-[14px] font-poppins font-semibold">Add To Cart</div>
             <div class="w-[123px] h-[64px] flex items-center justify-center gap-3 p-2 rounded-[5px] border border-[#9F9F9F] text-[14px] font-poppins font-semibold">
