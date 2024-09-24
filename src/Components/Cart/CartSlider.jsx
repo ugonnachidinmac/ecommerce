@@ -50,7 +50,7 @@ const CartSlider = ({ show, setShow }) => {
 
 
           {/* Cart Items */}
-          <div className="cart-items pl-[30px] pr-[30px]">
+          <div className="cart-items pl-[30px] pr-[30px] ">
             {cart.length > 0 ? (
               cart.map((product) => (
                 <div key={product.id} className="cart-item mb-[20px]">
