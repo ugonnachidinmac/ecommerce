@@ -33,6 +33,10 @@ const Products = () => {
   //   navigate("/Compare", { state: { product } });
   // };
 
+  const handleCompareClick = () => {
+    navigate('/Compare'); // Assumes you have a route for '/compare'
+  };
+
   const handleShowmoreClick = () => {
     navigate("/ShowMore");
   };
@@ -119,18 +123,18 @@ const Products = () => {
                         <img src={shareIcon} alt="shareIcon" />
                         <p>Share</p>
                       </div>
-                      <div
+                      {/* <div
                         className="iconItems"
                         onClick={() => handleCompareClick(product)}
                       >
                         <img src={arrowFrontandBack} alt="arrowFrontandBack" />
                         <button onClick={(e) => redir('/single/' +product.id)}>Compare</button>
-                      </div>
+                      </div> */}
 
-                      {/* <div className="iconItems" onClick={handleCompareClick}>
+                      <div className="iconItems" onClick={handleCompareClick}>
                         <img src={arrowFrontandBack} alt="arrowFrontandBack" />
                         <p>Compare</p>
-                      </div> */}
+                      </div>
                       <div
                         className="iconItems"
                         onClick={() => handleLikeClick(product.id)}

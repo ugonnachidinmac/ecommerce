@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import logo from '../assets/logo.png';
 import navIcon1 from '../assets/navIcon1.png';
 import navIcon2 from '../assets/navIcon2.png';
@@ -17,6 +17,15 @@ import { cartData } from '../Components/Atom/Cart'
 const Nav = () => {
     let [show, setShow] = useState(false);
     let cart = useRecoilValue(cartData);
+    const [isBlinking, setIsBlinking] = useState(false);
+
+    useEffect(() => {
+        if (cart.length > 0) {
+          setIsBlinking(true);
+          const timeout = setTimeout(() => setIsBlinking(false), 20000); // Blinks for 2 seconds
+          return () => clearTimeout(timeout); // Cleanup timeout
+        }
+      }, [cart]);
   return (
     <nav className='nav-container w-full'>
         <ol className='flex items-center justify-between'>
@@ -36,7 +45,13 @@ const Nav = () => {
                 <Link to="/"><img src={navIcon3} alt="navIcon3" /></Link>
                 <div className='relative'>
                 <Link to="#" onClick={()=> setShow(prev=> !prev)}><img src={navIcon4} alt="navIcon4" /></Link>
-                <span className='absolute top-1/3 right-1/2 bg-red-500 text-white text-sm w-5 h-5 rounded-full flex justify-center'>{cart.length}</span>
+                <span
+      className={`absolute top-1/3 right-1/2 bg-red-500 text-white text-sm w-5 h-5 rounded-full flex justify-center items-center ${
+        isBlinking ? 'animate-blink' : ''
+      }`}
+    >
+      {cart.length}
+    </span>
                 </div>
               
             </li>
