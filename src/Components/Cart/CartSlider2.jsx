@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from 'react'
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
 import cartCloseIcon from "../../assets/cartCloseIcon.png";
@@ -9,18 +9,31 @@ import { cartData } from "../../Components/Atom/Cart";
 const CartSlider = ({ show, setShow }) => {
   let redir = useNavigate();
   let [cart, setCart] = useRecoilState(cartData);
+  let [total,setTotal] = useState(0);
+  let [subtotal, setSubtotal] = useState(0);
 
   const handleRemoveProduct = (productId) => {
     const updatedCart = cart.filter((product) => product.id !== productId);
     setCart(updatedCart); // Assuming setCart is your state updater function
   };
+  
 
-  // const subtotal = cart.reduce((total, product) => total + product.price * product.quantity, 0);
-  // const subtotal = cart.reduce((total, product) => total + Number(product.price), 0);
-  const subtotal = cart.reduce((total, product) => {
-    const price = parseFloat(String(product.price).replace(/[^0-9.-]+/g, "")); // Ensure it's a clean number
-    return total + (isNaN(price) ? 0 : price); // Handle invalid price gracefully
-  }, 0);
+  useEffect(()=> {
+    if(cart.length > 0) {
+       let subtotal = cart.map((a)=> {
+       let y = Number(String(a.price).split(' ')[1].split('.000')[0])
+           return y;
+        });
+
+       setTotal(subtotal.reduce((a,b)=> a+=b))
+
+    }else{
+        console.log('cart empty')
+    }
+ },[cart])
+
+
+  // const subtotal = cart.reduce((total, product) => total + product.price, 0)
 
   let handleClose = (e) => {
     e.stopPropagation();
@@ -52,6 +65,7 @@ const CartSlider = ({ show, setShow }) => {
             </button>
           </div>
 
+
           {/* Cart Items */}
           <div className="cart-items pl-[30px] pr-[30px] ">
             {cart.length > 0 ? (
@@ -59,25 +73,15 @@ const CartSlider = ({ show, setShow }) => {
                 <div key={product.id} className="cart-item mb-[20px]">
                   <div className="flex items-center gap-[30px]">
                     <img
-                      src={product.url}
-                      alt={product.productName}
+                    
+                     src={product.url}
+                     alt={product.productName}
                       className="w-[95px] h-[85px] rounded-md"
                     />
-                    <div className="w-[145px]">
-                      <p className="font-[Poppins] text-[16px] text-black">
-                        {product.productName}
-                      </p>
-                      <p className="font-[Poppins] text-[16px] font-bold text-[#b49651]">
-                        <span className="text-black font-[Poppins] text-[16px]">
-                          1 x{" "}
-                        </span>
-                        {`Rs ${product.price}`}
-                      </p>
-                    </div>
+                    <div className="w-[145px]"><p className="font-[Poppins] text-[16px] text-black">{product.productName}</p>
+                    <p className="font-[Poppins] text-[16px] font-bold text-[#b49651]"><span className="text-black font-[Poppins] text-[16px]">1 x </span>{`Rs. ${product.price}`}</p></div>
 
-                    <div onClick={() => handleRemoveProduct(product.id)}>
-                      <img src={cartblockIcon} alt="" />
-                    </div>
+                    <div onClick={() => handleRemoveProduct(product.id)}><img src={cartblockIcon} alt="" /></div>
                   </div>
                 </div>
               ))
@@ -90,15 +94,15 @@ const CartSlider = ({ show, setShow }) => {
 
           {/* Subtotal and Buttons */}
           <div className="bottomContainer relative mt-[45px]">
-            <div className="flex items-center gap-[100px] pb-[25px] pr-[40px] mb-[20px] border-none border-b-2 border-b-[#9F9F9F] pl-[30px]">
+            <div className="flex items-center gap-[140px] pb-[25px] pr-[40px] mb-[20px] border-none border-b-2 border-b-[#9F9F9F] pl-[30px]">
               <p className="font-[Poppins] text-[16px] font-bold">Subtotal</p>
-              <p className="font-[Poppins] text-[16px] font-bold text-[#b49651]">
-                {`Rs ${subtotal.toLocaleString("en-IN", {
-                  minimumFractionDigits: 3,
-                  maximumFractionDigits: 6,
-                })}`}
-              .000</p>
+              <p className="font-[Poppins] text-[16px] font-bold text-[#b49651]"> 
+            {`Rs. ${subtotal.toLocaleString('en-IN')}`}</p>
             </div>
+             
+{/* 
+            Rp {String(total).includes('.')?String(total).padEnd(5,'0').concat('.000'):String(total).concat('.').padEnd(5,'0').concat('.000')} */}
+
 
             <div className="buttonDiv flex flex-col lg:flex-row gap-[25px] pl-[30px] pr-[60px]">
               <button
