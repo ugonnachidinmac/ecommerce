@@ -32,7 +32,7 @@ const SignupForm = () => {
 
   return (
     <div>
-      <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4">
+      <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4 overflow-hidden">
         <div>
           <label htmlFor="yourName" className="block mb-1">Your Name</label>
           <input
@@ -43,7 +43,7 @@ const SignupForm = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.yourName}
-            className="w-[528.75px] px-3 py-2 border border-gray-300 rounded-[10px]"
+            className="w-full sm:w-[90%] lg:w-[528.75px] px-3 py-2 border border-gray-300 rounded-[10px]"
           />
           {formik.touched.yourName && formik.errors.yourName ? (
             <div className="text-red-500">{formik.errors.yourName}</div>
@@ -60,7 +60,7 @@ const SignupForm = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.emailAddress}
-            className="w-[528.75px] px-3 py-2 border border-gray-300 rounded-[10px]"
+            className="w-full sm:w-[90%] lg:w-[528.75px] px-3 py-2 border border-gray-300 rounded-[10px]"
           />
           {formik.touched.emailAddress && formik.errors.emailAddress ? (
             <div className="text-red-500">{formik.errors.emailAddress}</div>
@@ -77,7 +77,7 @@ const SignupForm = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.subject}
-            className="w-[528.75px] px-3 py-2 border border-gray-300 rounded-[10px]"
+            className="w-full sm:w-[90%] lg:w-[528.75px] px-3 py-2 border border-gray-300 rounded-[10px]"
           />
         </div>
 
@@ -90,7 +90,7 @@ const SignupForm = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.message}
-            className="w-[528.75px] min-h-[150px] px-3 py-2 border border-gray-300 rounded-[10px] resize-none"
+            className="w-full sm:w-[90%] lg:w-[528.75px] min-h-[150px] px-3 py-2 border border-gray-300 rounded-[10px] resize-none"
             style={{ textAlign: 'left', verticalAlign: 'top' }} // Ensures text starts from top left
           />
           {formik.touched.message && formik.errors.message ? (
@@ -98,7 +98,9 @@ const SignupForm = () => {
           ) : null}
         </div>
 
-        <button type="submit" className="px-4 py-2 bg-[#B88E2F] text-white rounded-md w-[237px]">Submit</button>
+        <button type="submit" className="px-4 py-2 bg-[#B88E2F] text-white rounded-md w-full sm:w-[50%] lg:w-[237px]">
+          Submit
+        </button>
       </form>
 
       <ToastContainer />

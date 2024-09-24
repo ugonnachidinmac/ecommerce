@@ -16,7 +16,7 @@ const CartSlider = ({ show, setShow }) => {
   };
   
 
-  const subtotal = cart.reduce((total, item) => total + item.price, 0)
+  const subtotal = cart.reduce((total, product) => total + product.price, 0)
 
   let handleClose = (e) => {
     e.stopPropagation();
@@ -61,8 +61,8 @@ const CartSlider = ({ show, setShow }) => {
                      alt={product.productName}
                       className="w-[95px] h-[85px] rounded-md"
                     />
-                    <div className="w-[145px]"><p className="font-[Poppins] text-[16px]">{product.productName}</p>
-                    <p className="font-[Poppins] text-[16px] font-bold text-[#b49651]">{`Rs. ${product.price}`}</p></div>
+                    <div className="w-[145px]"><p className="font-[Poppins] text-[16px] text-black">{product.productName}</p>
+                    <p className="font-[Poppins] text-[16px] font-bold text-[#b49651]"><span className="text-black font-[Poppins] text-[16px]">1 x </span>{`Rs. ${product.price}`}</p></div>
 
                     <div onClick={() => handleRemoveProduct(product.id)}><img src={cartblockIcon} alt="" /></div>
                   </div>

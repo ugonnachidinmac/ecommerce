@@ -6,23 +6,33 @@ import shareIcon from "../assets/shareIcon.png";
 import love from "../assets/love.png";
 import arrowFrontandBack from "../assets/arrowFrontandBack.png";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from"react-redux";
-import {addToCart } from "../Components/Cart/CartSlice";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Components/Cart/CartSlice";
 // import { useGetAllProductsQuery } from "../Components/"
-// import { useRecoilState } from 'recoil';
-// import { cartState } from '../Components/Atom/CartAtom';
+import { useRecoilState } from "recoil";
+import { cartData } from "../Components/Atom/Cart";
 
 const Products = () => {
   const [products, setProducts] = useState(ProductsData);
   const [showToast, setShowToast] = useState(false);
   const [likedProducts, setLikedProducts] = useState({});
-  // const [cart, setCart] = useRecoilState(cartState);
+  let [cart, setCart] = useRecoilState(cartData);
+  let redir = useNavigate();
   const navigate = useNavigate();
 
-  const handleCompareClick = (product) => {
-    navigate("/Compare", { state: { product } });
-  };
-  
+  function addToCart(data) {
+    if (cart.find((x) => x.id === data.id)) {
+      console.log("found");
+    } else {
+      console.log("not found");
+      setCart([...cart, data]);
+    }
+  }
+
+  // const handleCompareClick = (product) => {
+  //   navigate("/Compare", { state: { product } });
+  // };
+
   const handleShowmoreClick = () => {
     navigate("/ShowMore");
   };
@@ -47,49 +57,49 @@ const Products = () => {
     return "transparent"; // No background if percentage is empty or undefined
   };
 
-
-  
-  const handleAddToCart = () => {
-    const itemExists = cart.find(item => item.id === product.id);
-    if (itemExists) {
-      setCart(cart.map(item =>
-        item.id === product.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      ));
-    } else {
-      setCart([...cart, { ...product, quantity: 1 }]);
-    }
-  };
+  // const handleAddToCart = () => {
+  //   const itemExists = cart.find(item => item.id === product.id);
+  //   if (itemExists) {
+  //     setCart(cart.map(item =>
+  //       item.id === product.id
+  //         ? { ...item, quantity: item.quantity + 1 }
+  //         : item
+  //     ));
+  //   } else {
+  //     setCart([...cart, { ...product, quantity: 1 }]);
+  //   }
+  // };
 
   return (
     <>
       <h4 className="ourProducts mb-[25px]">Our Products</h4>
-      <div className=" w-[90%] grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 justify-center place-items-center m-auto">
+      <div className=" w-full grid  grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-5 justify-center items-center m-auto overflow-hidden">
         {Object.keys(images)
           .filter((key) => key.startsWith("image"))
           .map((key) => {
             const product = images[key];
             return (
-              <div key={product.id} className="theProducts">
-                <div className="flex-1 w-[270px] bg-[#F4F5F7]">
+              <div key={product.id} className="theProducts ">
+                <div className="flex-1  bg-[#F4F5F7] w-full">
                   <Image
                     cloudName={images.cloudName}
                     publicId={product.url}
                     loading="lazy"
                     alt={product.productName}
-                    className="productImages"
+                    className="productImages w-full object-cover"
                   />
-                  <div className="product-details">
+                  <div className="product-details w-full pl-[15px]">
                     <span
                       className="percentage"
-                      style={{ backgroundColor: getBackgroundColor(product.percentage) }}
+                      style={{
+                        backgroundColor: getBackgroundColor(product.percentage),
+                      }}
                     >
                       {product.percentage}
                     </span>
                     <h5 className="productsName">{product.productName}</h5>
                     <p className="productsDescription">{product.description}</p>
-                    <div className="spans">
+                    <div className="spans w-full ">
                       <p className="mainPrice">Rp {product.price}</p>
                       {product.previousPrice && (
                         <p className="cancelled">Rp {product.previousPrice}</p>
@@ -97,23 +107,34 @@ const Products = () => {
                     </div>
                   </div>
                   {/* Hover overlay */}
-                  <div className="hoverOverlay w-[100%]">
-                    <button className="network" onClick={() => handleAddToCart(product)}>Add to cart</button>
-                    <div className="overlayIcons">
+                  <div className="hoverOverlay w-full">
+                    <button
+                      className="network "
+                      onClick={(e) => addToCart(product)}
+                    >
+                      Add to cart
+                    </button>
+                    <div className="overlayIcons pl-[15px] pr-[15px]">
                       <div className="iconItems" onClick={handleShareClick}>
                         <img src={shareIcon} alt="shareIcon" />
                         <p>Share</p>
                       </div>
-                      <div className="iconItems" onClick={() => handleCompareClick(product)}>
-  <img src={arrowFrontandBack} alt="arrowFrontandBack" />
-  <p>Compare</p>
-</div>
+                      <div
+                        className="iconItems"
+                        onClick={() => handleCompareClick(product)}
+                      >
+                        <img src={arrowFrontandBack} alt="arrowFrontandBack" />
+                        <button onClick={(e) => redir('/single/' +product.id)}>Compare</button>
+                      </div>
 
                       {/* <div className="iconItems" onClick={handleCompareClick}>
                         <img src={arrowFrontandBack} alt="arrowFrontandBack" />
                         <p>Compare</p>
                       </div> */}
-                      <div className="iconItems" onClick={() => handleLikeClick(product.id)}>
+                      <div
+                        className="iconItems"
+                        onClick={() => handleLikeClick(product.id)}
+                      >
                         <img src={love} alt="love" />
                         <p>{likedProducts[product.id] ? "Liked" : "Like"}</p>
                       </div>
@@ -124,7 +145,12 @@ const Products = () => {
             );
           })}
       </div>
-      <button className="showMoreButton grid grid-cols-1 m-auto" onClick={handleShowmoreClick}>Show More</button>
+      <button
+        className="showMoreButton grid grid-cols-1 m-auto"
+        onClick={handleShowmoreClick}
+      >
+        Show More
+      </button>
       {showToast && <div className="toast">URL Copied to Clipboard!</div>}
     </>
   );

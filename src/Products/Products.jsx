@@ -17,6 +17,7 @@ const Products = () => {
   const [showToast, setShowToast] = useState(false);
   const [likedProducts, setLikedProducts] = useState({});
   let [cart, setCart] = useRecoilState(cartData);
+  let redir = useNavigate();
   const navigate = useNavigate();
 
   function addToCart(data) {
@@ -28,9 +29,9 @@ const Products = () => {
     }
   }
 
-  const handleCompareClick = (product) => {
-    navigate("/Compare", { state: { product } });
-  };
+  // const handleCompareClick = (product) => {
+  //   navigate("/Compare", { state: { product } });
+  // };
 
   const handleShowmoreClick = () => {
     navigate("/ShowMore");
@@ -123,7 +124,7 @@ const Products = () => {
                         onClick={() => handleCompareClick(product)}
                       >
                         <img src={arrowFrontandBack} alt="arrowFrontandBack" />
-                        <p>Compare</p>
+                        <button onClick={(e) => redir('/single/' +product.id)}>Compare</button>
                       </div>
 
                       {/* <div className="iconItems" onClick={handleCompareClick}>

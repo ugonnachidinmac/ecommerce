@@ -4,7 +4,7 @@ import {Signup} from '../Components/Form/Signup'
 const Footer = () => {
   return (
  <>
-  <div className="footer">
+  <div className="footer w-full">
     <div className="insideFooter">
       <div className="footerInfo">
 

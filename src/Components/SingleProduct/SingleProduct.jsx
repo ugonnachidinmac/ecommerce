@@ -18,6 +18,10 @@ const SingleProduct = () => {
   let {shop} = useParams()
   let [singleProduct, setSingleProduct] = useState(null);
   const [value, setValue] = useState(1); // Initial value is 1
+  let {id} = useParams();
+  useEffect(()=> {
+    axios.get()
+  })
 
    // Function to increase value
    const handleIncrease = () => {

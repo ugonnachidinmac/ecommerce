@@ -47,10 +47,10 @@ const Section3 = () => {
         <button>Explore More</button>
       </div>
 
-      <div className="sec3Row2 w-full">
+      <div className="sec3Row2">
         <img src={img41} alt="img41" />
-        <div className="bgWhiteContent m-full">
-          <div className="containerRoom1 w-full">
+        <div className="bgWhiteContent">
+          <div className="containerRoom1 ">
             <div className="room1">
               <p>01</p>
               <img src={hori} alt="" />

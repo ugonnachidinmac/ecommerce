@@ -37,6 +37,7 @@ function App() {
           <Route path='/Compare' element={<Compare />} />
           <Route path='/ShowMore' element={<ShowMore />} />
           <Route path='/Cart' element={<Cart />} />
+          <Route path='/single/:id' element={<SingleProduct />} />
           <Route path='/Products' element={<Products />} />
           <Route path='/CheckOut' element={<CheckOut />} />
           <Route path='/Comparison' element={<Comparison />} />
