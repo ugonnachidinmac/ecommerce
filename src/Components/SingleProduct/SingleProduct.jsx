@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,  useEffect } from "react";
 import { Image } from "cloudinary-react";
 import { images } from "../../../data/singleProduct.json";
 import arrowRightBlack from "../../assets/arrowRightBlack.png";
@@ -12,16 +12,29 @@ import iconSLinkin from "../../assets/iconSLinkin.png";
 import iconsTwitter from "../../assets/iconsTwitter.png";
 import { Link } from 'react-router-dom'; // Correct the import
 import{ useParams } from 'react-router-dom'
+import axios from 'axios';
 
 // starty
 const SingleProduct = () => {
   let {shop} = useParams()
-  let [singleProduct, setSingleProduct] = useState(null);
+  // let [singleProduct, setSingleProduct] = useState(null);
   const [value, setValue] = useState(1); // Initial value is 1
   let {id} = useParams();
+  const [data, setData] = useState(null);
+  const [price, setPrice] = useState(null);
+
+
+
   useEffect(()=> {
-    axios.get()
-  })
+    axios.get('http://localhost:9000/images/' +id)
+    .then(resp=> {
+      setData(resp.data);
+      setPrice(resp.data.price);
+    })
+    .catch(err=> {
+      console.log(err)
+    })
+  }, [id])
 
    // Function to increase value
    const handleIncrease = () => {
@@ -38,8 +51,8 @@ const SingleProduct = () => {
 
   return (
     <>
-      {/*  grid-cols-1 sm:grid-cols-1 lg:gridgrid-cols-3 gap-10 */}
-      <div class="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap gap-5 px-10 py-20 bg-red-100">
+
+<div class="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap gap-5 px-10 py-20 bg-red-100">
         <div class="flex flex-row gap-2">
           <p class="font-Poppins text-[16px] font-semibold">Home</p>
           <img class="w-[20px] h-[20px] mt-1" src={arrowRightBlack} alt="" />
@@ -50,60 +63,71 @@ const SingleProduct = () => {
         </div>
         {/* border: 2px solid #9F9F9F */}
         <div class="border-l border-l-[#9F9F9F] pl-4 font-Poppins text-[16px] font-semibold">
-          Asgaard sofa
+         Product ID | {id}
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-2 overflow-hidden pl-10 mt-10">
-        <div class="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap gap-5">
-          <div class="w-[76px] h-[416px] flex flex-col gap-10">
-            <div class="flex-1 bg-[#F9F1E7] h-[80px]">
-              <Image
+      <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-2 overflow-hidden pl-10 mt-10"> 
+        {/* small iamge big imag and text */}
+          <div class="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap gap-5">
+              {/* smaill and big image  */}
+              <div class="w-[76px] h-[416px] flex flex-col gap-10">
+                {/* small image */}
+                <div class="flex-1 bg-[#F9F1E7] h-[80px]">
+                    {/* per each small image */}
+                    <Image
                 loading="lazy"
-                cloudName={images.dqtyrjpeh}
+                cloudName={images.cloudName}
                 publicId={images.image1.url}
               />
-            </div>
-            <div class="flex-1 bg-[#F9F1E7]">
+                </div>
+                <div class="flex-1 bg-[#F9F1E7]">
               <Image
                 loading="lazy"
-                cloudName={images.dqtyrjpeh}
+                cloudName={images.cloudName}
                 publicId={images.image2.url}
               />
             </div>
             <div class="flex-1 bg-[#F9F1E7]">
               <Image
                 loading="lazy"
-                cloudName={images.dqtyrjpeh}
+                cloudName={images.cloudName}
                 publicId={images.image3.url}
               />
             </div>
             <div class="flex-1 bg-[#F9F1E7]">
               <Image
                 loading="lazy"
-                cloudName={images.dqtyrjpeh}
+                cloudName={images.cloudName}
                 publicId={images.image4.url}
               />
             </div>
-          </div>
-
-          <div class="w-[300px] h-[480px] flex-1 bg-[#F9F1E7] mr-20">
+              </div>
+               {/* smaill and big image then big image here  */}
+               <div class="w-[300px] h-[480px] flex-1 bg-[#F9F1E7] mr-20">
             <div>
               <Image
                 loading="lazy"
-                cloudName={images.dqtyrjpeh}
+          cloudName={images.cloudName}
                 publicId={images.image5.url}
               />
             </div>
           </div>
-        </div>
-        <div class="w-[606.01px] h-[750px]  ml-5">
-          <p class="size-[52px] font-bold font-poppins w-[282px] h-[62px] pt-8">
-            Asgaard sofa
-          </p>
+          </div>
+          {/* the text here */}
+          <div class="w-[606.01px] h-[750px] ml-5">
+        <p class="size-[52px] font-bold font-poppins w-[282px] h-[62px] pt-8">
+          Asgaard sofa
+        </p>
+        {data ? (
           <p class="size-[24px] font-poppins font-semibold text-[#9F9F9F] w-[173px]">
-            Rs. 250,000.00
+            Price {data.price}
           </p>
+        ) : (
+          <p>Loading...</p>
+        )}
+      
+
 
           <div class="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap gap-5 mt-5">
             <div class="flex gap-2 w-[124px]  ">
@@ -166,7 +190,7 @@ const SingleProduct = () => {
               <span>+</span>
               <span>Compare</span>
             </div>
-            
+      
             </div>
             <div class="flex flex-col w-[620px]  border-t-2 border-t-[#9F9F9F] pt-6 mt-8">
               <div class="flex gap-4 mb-2">
@@ -195,26 +219,32 @@ const SingleProduct = () => {
               </div>
           </div>
         </div>
-        
       </div>
+      
+
+
+
+      {/* discription section  */}
       <div class="flex flex-col items-center justify-center   border-t-2 border-t-[#9F9F9F]">
      
-      <div class="w-full max-w-[649px] h-auto mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-between pt-10 pb-10 gap-4 text-center">
-  <Link to="/Home" class="text-[24px] font-poppins font-bold w-[269px]">Description</Link>
-  <Link to="/Home" class="text-[24px] font-poppins w-[269px]">Additional Information</Link>
-  <Link to="/Home" class="text-[24px] font-poppins w-[269px]">Reviews [5]</Link>
+     <div class="w-full max-w-[649px] h-auto mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-between pt-10 pb-10 gap-4 text-center">
+ <Link to="/Home" class="text-[24px] font-poppins font-bold w-[269px]">Description</Link>
+ <Link to="/Home" class="text-[24px] font-poppins w-[269px]">Additional Information</Link>
+ <Link to="/Home" class="text-[24px] font-poppins w-[269px]">Reviews [5]</Link>
 </div>
 
-            
-            <div class="w-full max-w-[1026px] h-auto flex flex-col text-[16px] font-poppins text-justify overflow-hidden sm:flex-wrap lg:flex-nowrap">
-  <p class="mb-8 ">
-    Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.
-  </p>
-  <p class="mb-8 ">
-    Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.
-  </p>
+           
+           <div class="w-full max-w-[1026px] h-auto flex flex-col text-[16px] font-poppins text-justify overflow-hidden sm:flex-wrap lg:flex-nowrap">
+ <p class="mb-8 ">
+   Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.
+ </p>
+ <p class="mb-8 ">
+   Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.
+ </p>
+</div>
 </div>
 
+{/* First Image set */}
 <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-3 w-full max-w-full overflow-hidden">
   <div class="w-full max-w-[605px] mx-auto">
     <Image class="w-full h-[348px] object-cover"
@@ -231,9 +261,9 @@ const SingleProduct = () => {
     />
   </div>
 </div>
- </div>
+ 
 
-
+ {/* Related product */}
  <div class="flex flex-col items-center justify-center overflow-hidden mt-24 mb-24">
 
     <h3 class="mb-10 font-poppins font-bold size-[46px] w-full flex items-center justify-center">Related Products</h3>
@@ -347,6 +377,23 @@ const SingleProduct = () => {
 </div>
      
      {/* end */}
+
+
+
+
+
+
+      {/* <div>
+        <h3>Single Product | {id}</h3>
+         {
+          data && <div>
+            <h4> {data.price}  </h4>
+           </div>
+        }
+
+        <h4>{productdata.productName}</h4>
+      </div>
+      <h2>just checking</h2> */}
     </>
   );
 };

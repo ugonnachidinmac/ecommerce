@@ -8,19 +8,33 @@ import iconHigh from '../../assets/iconHigh.png';
 import iconWarranty from '../../assets/iconWarranty.png';
 import iconFree from '../../assets/iconFree.png';
 import iconSupport from '../../assets/iconSupport.png';
+import { useRecoilState } from "recoil";
+import { cartData } from "../../Components/Atom/Cart"
 import { useNavigate } from "react-router-dom";
+
 
 const Shop = () => {
   const [product, setProduct] = useState(null);
   const [showToast, setShowToast] = useState(false);
   const [likedProducts, setLikedProducts] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
+  let [cart, setCart] = useRecoilState(cartData);
   const productsPerPage = 16; // Customize the number of products per page
+  let redir = useNavigate();
   const navigate = useNavigate();
 
-  const handleCompareClick = () => {
-    navigate("/Compare");
-  };
+  // const handleCompareClick = () => {
+  //   navigate("/Compare");
+  // };
+
+  function addToCart(data) {
+    if (cart.find((x) => x.id === data.id)) {
+      console.log("found");
+    } else {
+      console.log("not found");
+      setCart([...cart, data]);
+    }
+  }
 
   const handleShareClick = () => {
     const url = window.location.href;
@@ -85,16 +99,25 @@ const Shop = () => {
                 </div>
                 {/* Hover overlay */}
                 <div className="hoverOverlay w-[100%]">
-                  <div className="network">Add to cart</div>
+                <button
+                      className="network "
+                      onClick={(e) => addToCart(product)}
+                    >
+                      Add to cart
+                    </button>
                   <div className="overlayIcons">
                     <div className="iconItems" onClick={handleShareClick}>
                       <img src={shareIcon} alt="shareIcon" />
                       <p>Share</p>
                     </div>
-                    <div className="iconItems" onClick={handleCompareClick}>
+                    <div className="iconItems" onClick={(e)=> redir('/single/' + product.id)}>
+                        <img src={arrowFrontandBack} alt="arrowFrontandBack" />
+                        <p>Compare</p>
+                      </div>
+                    {/* <div className="iconItems" onClick={handleCompareClick}>
                       <img src={arrowFrontandBack} alt="arrowFrontandBack" />
                       <p>Compare</p>
-                    </div>
+                    </div> */}
                     <div className="iconItems" onClick={() => handleLikeClick(product.id)}>
                       <img src={love} alt="love" />
                       <p>{likedProducts[product.id] ? "Liked" : "Like"}</p>

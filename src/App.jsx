@@ -45,7 +45,7 @@ function App() {
         </Routes>
       </Suspense>
       <Footer />
-      {/* http://localhost:5175/ */}
+ {/*  http://localhost:5174/ */}
     </>
   );
 }
