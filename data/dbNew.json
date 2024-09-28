@@ -1,0 +1,85 @@
+{
+        "products": [
+          {
+            "id": 1,
+            "percentage": "-30%",
+        "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280231/img31_bnpyhc.png",
+        "productName": "Syltherine",
+        "description": "Stylish cafe chair",
+        "price": "2.500.000",
+         "cloudinaryName": "dqtyrjpeh", 
+        "previousPrice": "3.500.000"
+      },
+          {
+            "id": 2,
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726080555/shopImg2_i7tpmf.png",
+        "productName": "Leviosa",
+        "description": "Stylish cafe chair",
+        "price": "2.500.000",
+         "cloudinaryName": "dqtyrjpeh", 
+        "previousPrice": "2.500.000"
+      },
+          {
+            "id": "3",
+            "percentage": "-50%",
+            "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726345690/img33_t0cpks.png",
+            "productName": "Lolito",
+            "description": "Luxury big sofa",
+            "price": "7.000.000",
+             "cloudinaryName": "dqtyrjpeh", 
+            "previousPrice": "14.000.000"
+          },
+          {
+          "id": "4",
+          "percentage": "New",
+          "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726345697/img34_bnxwxs.png",
+          "productName": "Respira",
+          "description": "Outdoor bar table and stool'",
+          "price": "500.000",
+           "cloudinaryName": "dqtyrjpeh", 
+          "previousPrice": ""
+        },
+      {
+       "id": "5",
+      
+        "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280230/img35_yp7ukl.png ",
+        "productName": "Grifo",
+        "description": "Night lamp",
+        "price": "1.500.000",
+         "cloudinaryName": "dqtyrjpeh", 
+        "previousPrice": ""
+      },
+      {
+        "id": "6",
+        "percentage": "New",
+        "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280232/img36_xrxqec.png",
+        "productName": "Muggo",
+        "description": "Small mug",
+        "price": "150.000",
+         "cloudinaryName": "dqtyrjpeh", 
+        "previousPrice": ""
+      },
+      {
+       "id": "7",
+        "percentage": "-50%",
+        "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280232/img37_niqflb.png",
+        "productName": "Pingky",
+        "description": "Cute bed set",
+        "price": "7.000.000",
+         "cloudinaryName": "dqtyrjpeh", 
+        "previousPrice": "14.000.000"
+      },
+      {
+       "id": "8",
+        "percentage": "New",
+        "url": "https://res.cloudinary.com/dqtyrjpeh/image/upload/v1726280232/img38_ctnv5n.png",
+        "productName": "Potty",
+        "description": "Minimalist flower pot",
+        "price": "500.000",
+         "cloudinaryName": "dqtyrjpeh", 
+        "previousPrice": ""
+      }
+      
+    ]
+  }
+  

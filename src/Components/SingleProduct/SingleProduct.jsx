@@ -25,16 +25,21 @@ const SingleProduct = () => {
 
 
 
-  useEffect(()=> {
-    axios.get('http://localhost:9000/images/' +id)
-    .then(resp=> {
-      setData(resp.data);
-      setPrice(resp.data.price);
-    })
-    .catch(err=> {
-      console.log(err)
-    })
-  }, [id])
+  useEffect(() => {
+    axios.get(`http://localhost:9000/products/${id}`)
+      .then(resp => {
+        setData(resp.data);
+        setPrice(resp.data.price);
+      })
+      .catch(err => {
+        console.error("Error fetching data: ", err);
+        if (err.response && err.response.status === 404) {
+          // Handle 404 error specifically
+          console.log("Resource not found. Please check the server or ID.");
+        }
+      });
+  }, [id]);
+  
 
    // Function to increase value
    const handleIncrease = () => {
@@ -63,7 +68,7 @@ const SingleProduct = () => {
         </div>
         {/* border: 2px solid #9F9F9F */}
         <div class="border-l border-l-[#9F9F9F] pl-4 font-Poppins text-[16px] font-semibold">
-         Product ID | {id}
+        {data ? data.productName : "Loading..."}
         </div>
       </div>
 
@@ -117,11 +122,11 @@ const SingleProduct = () => {
           {/* the text here */}
           <div class="w-[606.01px] h-[750px] ml-5">
         <p class="size-[52px] font-bold font-poppins w-[282px] h-[62px] pt-8">
-          Asgaard sofa
+           {data ? data.productName : "Loading..."}
         </p>
         {data ? (
           <p class="size-[24px] font-poppins font-semibold text-[#9F9F9F] w-[173px]">
-            Price {data.price}
+          Rs{data.price}
           </p>
         ) : (
           <p>Loading...</p>
@@ -172,11 +177,7 @@ const SingleProduct = () => {
 
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-[606px]">
-            {/* <div class="w-[123px] h-[64px] flex items-center justify-between p-2 rounded-[5px] border border-[#9F9F9F] text-[14px] font-poppins font-semibold">
-              <span onClick={handleDecrease} style={{ cursor: 'pointer' }}>-</span>
-              <span>1</span>
-              <span onClick={handleIncrease} style={{ cursor: 'pointer' }} >+</span>
-            </div> */}
+          
 
 <div className="w-[123px] h-[64px] flex items-center justify-between p-2 rounded-[5px] border border-[#9F9F9F] text-[14px] font-poppins font-semibold">
         <span onClick={handleDecrease} style={{ cursor: 'pointer' }}>-</span>
@@ -377,23 +378,6 @@ const SingleProduct = () => {
 </div>
      
      {/* end */}
-
-
-
-
-
-
-      {/* <div>
-        <h3>Single Product | {id}</h3>
-         {
-          data && <div>
-            <h4> {data.price}  </h4>
-           </div>
-        }
-
-        <h4>{productdata.productName}</h4>
-      </div>
-      <h2>just checking</h2> */}
     </>
   );
 };

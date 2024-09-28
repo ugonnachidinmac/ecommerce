@@ -613,7 +613,7 @@ const SingleProduct = () => {
             </div>
           </div>
 
-          <div class="w-[300px] h-[480px] flex-1 bg-[#F9F1E7] mr-20">
+          <div class="w-[300px] h-[480px] flex-1 bg-[#d9ae79] mr-20">
             <div>
               <Image
                 loading="lazy"
@@ -879,4 +879,38 @@ const SingleProduct = () => {
 
 export default SingleProduct
 
-// END
+// ENDDEDHERE
+
+// ADD TO CART
+// const handleAddToCart = () => {
+  //   const itemExists = cart.find(item => item.id === product.id);
+  //   if (itemExists) {
+  //     setCart(cart.map(item =>
+  //       item.id === product.id
+  //         ? { ...item, quantity: item.quantity + 1 }
+  //         : item
+  //     ));
+  //   } else {
+  //     setCart([...cart, { ...product, quantity: 1 }]);
+  //   }
+  // };
+
+  // INCREASE AND DECREASE
+    {/* <div class="w-[123px] h-[64px] flex items-center justify-between p-2 rounded-[5px] border border-[#9F9F9F] text-[14px] font-poppins font-semibold">
+              <span onClick={handleDecrease} style={{ cursor: 'pointer' }}>-</span>
+              <span>1</span>
+              <span onClick={handleIncrease} style={{ cursor: 'pointer' }} >+</span>
+            </div> */}
+
+            // SINGLEPRODUCT DATA
+                  {/* <div>
+        <h3>Single Product | {id}</h3>
+         {
+          data && <div>
+            <h4> {data.price}  </h4>
+           </div>
+        }
+
+        <h4>{productdata.productName}</h4>
+      </div>
+      <h2>just checking</h2> */}

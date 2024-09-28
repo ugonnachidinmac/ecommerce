@@ -44,15 +44,18 @@ const Nav = () => {
                 <Link to="/"><img src={navIcon2} alt="navIcon2" /></Link>
                 <Link to="/"><img src={navIcon3} alt="navIcon3" /></Link>
                 <div className='relative'>
-                <Link to="#" onClick={()=> setShow(prev=> !prev)}><img src={navIcon4} alt="navIcon4" /></Link>
-                <span
-      className={`absolute top-1/3 right-1/2 bg-red-500 text-white text-sm w-5 h-5 rounded-full flex justify-center items-center ${
-        isBlinking ? 'animate-blink' : ''
-      }`}
-    >
-      {cart.length}
-    </span>
-                </div>
+  <Link to="#" onClick={() => setShow((prev) => !prev)}>
+    <img src={navIcon4} alt="navIcon4" />
+  </Link>
+  <span
+    className={`absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex justify-center items-center ${
+      isBlinking ? 'animate-blink' : ''
+    }`}
+  >
+    {cart.length}
+  </span>
+</div>
+
               
             </li>
 

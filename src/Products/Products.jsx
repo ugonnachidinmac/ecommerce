@@ -61,18 +61,7 @@ const Products = () => {
     return "transparent"; // No background if percentage is empty or undefined
   };
 
-  // const handleAddToCart = () => {
-  //   const itemExists = cart.find(item => item.id === product.id);
-  //   if (itemExists) {
-  //     setCart(cart.map(item =>
-  //       item.id === product.id
-  //         ? { ...item, quantity: item.quantity + 1 }
-  //         : item
-  //     ));
-  //   } else {
-  //     setCart([...cart, { ...product, quantity: 1 }]);
-  //   }
-  // };
+  
 
   return (
     <>
