@@ -7,8 +7,7 @@ import love from "../assets/love.png";
 import arrowFrontandBack from "../assets/arrowFrontandBack.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../Components/Cart/CartSlice";
-// import { useGetAllProductsQuery } from "../Components/"
+import { addToCart as addToCartAction } from "../Components/Cart/CartSlice"; // Rename to avoid conflict
 import { useRecoilState } from "recoil";
 import { cartData } from "../Components/Atom/Cart";
 
@@ -16,26 +15,19 @@ const Products = () => {
   const [products, setProducts] = useState(ProductsData);
   const [showToast, setShowToast] = useState(false);
   const [likedProducts, setLikedProducts] = useState({});
-  let [cart, setCart] = useRecoilState(cartData);
-  let redir = useNavigate();
+  const [cart, setCart] = useRecoilState(cartData);
+  const [viewedItems, setViewedItems] = useState([]);
   const navigate = useNavigate();
 
-  function addToCart(data) {
+  function handleAddToCart(data) { // Rename to avoid conflict with imported addToCartAction
     if (cart.find((x) => x.id === data.id)) {
       console.log("found");
     } else {
       console.log("not found");
       setCart([...cart, data]);
+      setViewedItems([...viewedItems, data.id]);
     }
   }
-
-  // const handleCompareClick = (product) => {
-  //   navigate("/Compare", { state: { product } });
-  // };
-
-  // const handleCompareClick = () => {
-  //   navigate('/Compare'); // Assumes you have a route for '/compare'
-  // };
 
   const handleShowmoreClick = () => {
     navigate("/ShowMore");
@@ -61,19 +53,17 @@ const Products = () => {
     return "transparent"; // No background if percentage is empty or undefined
   };
 
-  
-
   return (
     <>
       <h4 className="ourProducts mb-[25px]">Our Products</h4>
-      <div className=" w-full grid  grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-5 justify-center items-center m-auto overflow-hidden">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-5 justify-center items-center m-auto overflow-hidden">
         {Object.keys(images)
           .filter((key) => key.startsWith("image"))
           .map((key) => {
             const product = images[key];
             return (
-              <div key={product.id} className="theProducts ">
-                <div className="flex-1  bg-[#F4F5F7] w-full">
+              <div key={product.id} className="theProducts">
+                <div className="flex-1 bg-[#F4F5F7] w-full">
                   <Image
                     cloudName={images.cloudName}
                     publicId={product.url}
@@ -92,7 +82,7 @@ const Products = () => {
                     </span>
                     <h5 className="productsName">{product.productName}</h5>
                     <p className="productsDescription">{product.description}</p>
-                    <div className="spans w-full ">
+                    <div className="spans w-full">
                       <p className="mainPrice">Rp {product.price}</p>
                       {product.previousPrice && (
                         <p className="cancelled">Rp {product.previousPrice}</p>
@@ -102,26 +92,22 @@ const Products = () => {
                   {/* Hover overlay */}
                   <div className="hoverOverlay w-full">
                     <button
-                      className="network "
-                      onClick={(e) => addToCart(product)}
+                      className="network"
+                      onClick={(e) => handleAddToCart(product)}
                     >
-                      Add to cart
+                      {viewedItems.includes(product.id) ? "Viewed" : "Add to Cart"}
                     </button>
                     <div className="overlayIcons pl-[15px] pr-[15px]">
                       <div className="iconItems" onClick={handleShareClick}>
                         <img src={shareIcon} alt="shareIcon" />
                         <p>Share</p>
                       </div>
-                    
-                    {/* work from here */}
-                      <div className="iconItems" onClick={(e)=> redir('/single/' + product.id)}>
+
+                      <div className="iconItems" onClick={(e) => navigate("/single/" + product.id)}>
                         <img src={arrowFrontandBack} alt="arrowFrontandBack" />
                         <p>Compare</p>
                       </div>
-                      {/* <div className="iconItems" onClick={handleCompareClick}>
-                        <img src={arrowFrontandBack} alt="arrowFrontandBack" />
-                        <p>Compare</p>
-                      </div> */}
+
                       <div
                         className="iconItems"
                         onClick={() => handleLikeClick(product.id)}

@@ -33,12 +33,38 @@ const Nav = () => {
                 <Link to="/"><img src={logo} alt="logo" /></Link> {/* Use 'Link' and 'to' */}
             </li>
             <li className='custom-style linkFont'>
-                <Link to="/Home">Home</Link>
-                <Link to="/Shop">Shop</Link>
-                <Link to="/About">About</Link>
-                <Link to="/Contact">Contact</Link>
-                <Link to="/Blog">Blog</Link>
-            </li>
+  <Link
+    to="/Home"
+    className="hover:bg-[#B88E2F] hover:text-white focus:bg-[#B88E2F] focus:text-white active:bg-[#B88E2F] active:text-white px-4 py-2 transition"
+  >
+    Home
+  </Link>
+  <Link
+    to="/Shop"
+    className="hover:bg-[#B88E2F] hover:text-white focus:bg-[#B88E2F] focus:text-white active:bg-[#B88E2F] active:text-white px-4 py-2 transition"
+  >
+    Shop
+  </Link>
+  <Link
+    to="/About"
+    className="hover:bg-[#B88E2F] hover:text-white focus:bg-[#B88E2F] focus:text-white active:bg-[#B88E2F] active:text-white px-4 py-2 transition"
+  >
+    About
+  </Link>
+  <Link
+    to="/Contact"
+    className="hover:bg-[#B88E2F] hover:text-white focus:bg-[#B88E2F] focus:text-white active:bg-[#B88E2F] active:text-white px-4 py-2 transition"
+  >
+    Contact
+  </Link>
+  <Link
+    to="/Blog"
+    className="hover:bg-[#B88E2F] hover:text-white focus:bg-[#B88E2F] focus:text-white active:bg-[#B88E2F] active:text-white px-4 py-2 transition"
+  >
+    Blog
+  </Link>
+</li>
+
             <li className='custom-style'>
                 <Link to="/"><img src={navIcon1} alt="navIcon1" /></Link>
                 <Link to="/"><img src={navIcon2} alt="navIcon2" /></Link>

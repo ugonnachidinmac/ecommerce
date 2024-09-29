@@ -109,15 +109,21 @@ const SingleProduct = () => {
             </div>
               </div>
                {/* smaill and big image then big image here  */}
-               <div class="w-[300px] h-[480px] flex-1 bg-[#F9F1E7] mr-20">
-            <div>
-              <Image
-                loading="lazy"
-          cloudName={images.cloudName}
-                publicId={images.image5.url}
-              />
-            </div>
-          </div>
+               <div className="w-full lg:w-[300px] h-[480px] flex-1 bg-[#F9F1E7] mr-20 flex items-center justify-center">
+  <div className="w-full lg:w-[300px]">
+    {data ? (
+      <Image
+         class="h-auto max-h-full w-full lg:w-[300px] object-contain rounded-[18px]"
+        loading="lazy"
+        cloudName={data.cloudinaryName} // Use the `data.cloudinaryName` from API
+        publicId={data.url} // Use the `data.url` for publicId from the API response
+      />
+    ) : (
+      "Loading..."
+    )}
+  </div>
+</div>
+
           </div>
           {/* the text here */}
           <div class="w-[606.01px] h-[750px] ml-5">
