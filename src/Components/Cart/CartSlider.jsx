@@ -12,11 +12,9 @@ const CartSlider = ({ show, setShow }) => {
 
   const handleRemoveProduct = (productId) => {
     const updatedCart = cart.filter((product) => product.id !== productId);
-    setCart(updatedCart); // Assuming setCart is your state updater function
+    setCart(updatedCart);
   };
 
-  // const subtotal = cart.reduce((total, product) => total + product.price * product.quantity, 0);
-  // const subtotal = cart.reduce((total, product) => total + Number(product.price), 0);
   const subtotal = cart.reduce((total, product) => {
     const price = parseFloat(String(product.price).replace(/[^0-9.-]+/g, "")); // Ensure it's a clean number
     return total + (isNaN(price) ? 0 : price); // Handle invalid price gracefully
@@ -33,7 +31,7 @@ const CartSlider = ({ show, setShow }) => {
       <div
         onClick={handleClose}
         className={classNames(
-          "w-full h-[3107px] bg-[#00000033] fixed top-0 left-0 z-40",
+          "w-full h-full bg-[#00000033] fixed top-0 left-0 z-40",
           {
             hidden: !show,
           }
@@ -42,7 +40,7 @@ const CartSlider = ({ show, setShow }) => {
         {/* Cart Slider */}
         <div
           onClick={(e) => e.stopPropagation()}
-          className="parent w-[417px]  min-h-[746px] bg-white text-black fixed right-0 top-0 pt-[25px]"
+          className="parent w-[417px] min-h-[746px] bg-white text-black fixed right-0 top-0 pt-[25px]"
         >
           {/* Cart Header */}
           <div className="w-[350px] flex items-center justify-between pl-[30px] mb-[35px]">
@@ -53,7 +51,10 @@ const CartSlider = ({ show, setShow }) => {
           </div>
 
           {/* Cart Items */}
-          <div className="cart-items pl-[30px] pr-[30px] ">
+          <div
+            className="cart-items pl-[30px] pr-[30px] overflow-y-auto"
+            style={{ maxHeight: "400px" }} // Set max height for vertical scrolling
+          >
             {cart.length > 0 ? (
               cart.map((product) => (
                 <div key={product.id} className="cart-item mb-[20px]">
@@ -90,14 +91,15 @@ const CartSlider = ({ show, setShow }) => {
 
           {/* Subtotal and Buttons */}
           <div className="bottomContainer relative mt-[45px]">
-            <div className="flex items-center gap-[100px] pb-[25px] pr-[40px] mb-[20px] border-none border-b-2 border-b-[#9F9F9F] pl-[30px]">
+            <div className="flex items-center gap-[100px] pb-[15px] pr-[40px] mb-[10px] border-none border-b-2 border-b-[#9F9F9F] pl-[30px]">
               <p className="font-[Poppins] text-[16px] font-bold">Subtotal</p>
               <p className="font-[Poppins] text-[16px] font-bold text-[#b49651]">
                 {`Rs ${subtotal.toLocaleString("en-IN", {
                   minimumFractionDigits: 3,
                   maximumFractionDigits: 6,
                 })}`}
-              .000</p>
+                .000
+              </p>
             </div>
 
             <div className="buttonDiv flex flex-col lg:flex-row gap-[25px] pl-[30px] pr-[60px]">
