@@ -68,7 +68,7 @@ const SingleProduct = () => {
         </div>
         {/* border: 2px solid #9F9F9F */}
         <div class="border-l border-l-[#9F9F9F] pl-4 font-Poppins text-[16px] font-semibold">
-        {data ? data.productName : "Loading..."}
+        {data ? data.productName : "Loading... if take too long rerun the db"}
         </div>
       </div>
 

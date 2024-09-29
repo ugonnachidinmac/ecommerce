@@ -22,7 +22,7 @@ const Nav = () => {
     useEffect(() => {
         if (cart.length > 0) {
           setIsBlinking(true);
-          const timeout = setTimeout(() => setIsBlinking(false), 20000); // Blinks for 2 seconds
+          const timeout = setTimeout(() => setIsBlinking(false), 9000); // Blinks for 2 seconds
           return () => clearTimeout(timeout); // Cleanup timeout
         }
       }, [cart]);
