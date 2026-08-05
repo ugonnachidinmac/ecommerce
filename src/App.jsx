@@ -17,6 +17,7 @@ const Cart = lazy(()=> import ('./Components/Cart/Cart'))
 const Products = lazy(()=> import ('./Products/Products'))
 const CheckOut = lazy(()=> import ('./Components/CheckOut/CheckOut'))
 const Comparison = lazy(()=> import ('./Components/Comparison/Comparison'))
+const PrivacyPolicy = lazy(()=> import ('./Components/PrivacyPolicy/PrivacyPolicy'))
 const Error = lazy(()=> import ('./Error/Error'))
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path='/ProductComponent/:ProductComponent' element={<SingleProduct />} />
           <Route path='/About' element={<About />} />
           <Route path='/Contact' element={<Contact />} />
+          <Route path='/PrivacyPolicy' element={<PrivacyPolicy />} />
           <Route path='/Blog' element={<Blog />} />
           <Route path='/Compare' element={<Compare />} />
           <Route path='/ShowMore' element={<ShowMore />} />
