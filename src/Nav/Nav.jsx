@@ -27,7 +27,7 @@ const Nav = () => {
         }
       }, [cart]);
   return (
-    <nav className='nav-container w-full'>
+    <nav className="nav-container w-full fixed top-0 left-0 z-50 bg-white">
         <ol className='flex items-center justify-between'>
             <li>
                 <Link to="/"><img src={logo} alt="logo" /></Link> {/* Use 'Link' and 'to' */}

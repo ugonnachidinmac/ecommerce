@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <section className="flex flex-col items-center justify-center m-auto w-full max-w-screen-lg px-4">
+    <section className="flex flex-col items-center justify-center mt-[70px] m-auto w-full max-w-screen-lg px-4">
       {/* Header Section */}
       <h1 className="text-center text-blue-700 text-2xl lg:text-3xl font-bold border-b-2 border-red-500 w-full my-6">
         Furniro

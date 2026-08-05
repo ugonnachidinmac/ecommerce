@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import background1 from '../../data/background1.json';
 import { Image } from "cloudinary-react";
 import styles from '../Components/css/style1.module.css'; // Import CSS Module
+import { Link } from "react-router-dom";
 
 const Section1 = () => {
   const [bgImage, setBgImage] = useState('');
@@ -34,7 +35,11 @@ const Section1 = () => {
         <p className="text-[18px] font-[Poppins] mb-[45px] text-white">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
         </p>
-        <button className="px-4 py-2 bg-red-500 text-white rounded-lg transition-all">BUY Now</button>
+        <Link to="/shop">
+  <button className="px-4 py-2 bg-red-300 text-white rounded-lg font-bold transition-all duration-300 hover:bg-red-500 cursor-pointer">
+    BUY NOW
+  </button>
+</Link>
       </div>
     </div>
   );
